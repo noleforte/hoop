@@ -153,7 +153,7 @@ const SwapAndSocials = () => {
 
         {/* Logos */}
         <motion.div
-          className="flex justify-center gap-6 mt-16 relative"
+          className="flex justify-center gap-6 mt-16 relative left-10"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
