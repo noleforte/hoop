@@ -17,16 +17,17 @@ const About = () => {
               </motion.h2>
             </div>
       
-                   <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center gap-8 relative">
+                   <div className="w-full flex flex-col md:flex-row items-center justify-between gap-4 md:gap-8 relative px-4 md:px-0">
         
-                       {/* Left character */}
+                                      {/* Left character */}
                <motion.img
                  src="/Ref/hoop_page/char_1.png"
-                 className="w-72 md:w-[320px] object-contain fade-bottom"
-          style={{
-            maskImage: 'linear-gradient(to bottom, black 80%, transparent)', 
-            WebkitMaskImage: 'linear-gradient(to bottom, black 80%, transparent)'
-          }}
+                 className="w-48 sm:w-64 md:w-[350px] lg:w-[400px] xl:w-[450px] object-contain fade-bottom"
+                 style={{
+                   maskImage: 'linear-gradient(to bottom, black 80%, transparent)',
+                   WebkitMaskImage: 'linear-gradient(to bottom, black 80%, transparent)',
+                   marginTop: '10%'
+                 }}
           initial={{ opacity: 0, x: -100 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
@@ -36,7 +37,7 @@ const About = () => {
         
                        {/* Center content box */}
                <motion.div
-                 className="bg-[#fff4ef] rounded-xl p-6 max-w-md text-center shadow-md text-[#444] text-sm leading-relaxed"
+                 className="bg-[#fff4ef] rounded-xl p-4 md:p-6 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg text-center shadow-md text-[#444] text-xs sm:text-sm leading-relaxed"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -53,14 +54,15 @@ const About = () => {
           </p>
         </motion.div>
         
-                       {/* Right character */}
+                                      {/* Right character */}
                <motion.img
                  src="/Ref/hoop_page/char_2.png"
-                 className="w-72 md:w-[320px] object-contain fade-bottom"
-          style={{
-            maskImage: 'linear-gradient(to bottom, black 80%, transparent)',
-            WebkitMaskImage: 'linear-gradient(to bottom, black 80%, transparent)'
-          }}
+                 className="w-48 sm:w-64 md:w-[350px] lg:w-[400px] xl:w-[450px] object-contain fade-bottom"
+                 style={{
+                   maskImage: 'linear-gradient(to bottom, black 80%, transparent)',
+                   WebkitMaskImage: 'linear-gradient(to bottom, black 80%, transparent)',
+                   marginTop: '-10%'
+                 }}
           initial={{ opacity: 0, x: 100 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 0.6 }}
