@@ -35,22 +35,26 @@ const Gallery = () => {
         </div>
         
         {/* Two separate tunnels with moving images */}
-        <div className="relative mx-auto max-w-7xl space-y-8">
+        <div className="relative mx-auto max-w-7xl space-y-2">
           {/* First tunnel - moving right */}
-          <div className="relative h-[250px] sm:h-[350px] md:h-[450px] mb-8">
+          <div className="relative h-[200px] sm:h-[300px] md:h-[400px]">
             <InfiniteScrollRow 
               images={galleryImages.slice(0, 8)} 
               direction="right" 
               speed={45} 
+              blurTop={true}
+              blurBottom={false}
             />
           </div>
           
           {/* Second tunnel - moving left */}
-          <div className="relative h-[250px] sm:h-[350px] md:h-[450px]">
+          <div className="relative h-[200px] sm:h-[300px] md:h-[400px]">
             <InfiniteScrollRow 
               images={galleryImages.slice(6, 13)} 
               direction="left" 
               speed={40} 
+              blurTop={false}
+              blurBottom={true}
             />
           </div>
         </div>
