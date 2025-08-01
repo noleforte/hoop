@@ -19,7 +19,7 @@ const Banner = () => {
   return (
     <>
                    {/* Header with image background */}
-             <header className="fixed top-0 left-0 right-0 z-50" style={{ paddingLeft: '80px', paddingRight: '80px' }}>
+             <header className="fixed top-0 left-0 right-0 z-50" style={{ paddingLeft: '80px', paddingRight: '80px', paddingTop: '30px' }}>
                <img
                  src="/Ref/hoop_page/top.png"
                  alt="Header background"
@@ -41,8 +41,8 @@ const Banner = () => {
                 minWidth: '60px', 
                 textAlign: 'center',
                 position: 'absolute',
-                left: '23%',
-                top: '50%',
+                left: '22%',
+                top: '59%',
                 transform: 'translate(-50%, -50%)'
               }}
             >
@@ -58,7 +58,7 @@ const Banner = () => {
                 textAlign: 'center',
                 position: 'absolute',
                 left: '37.5%',
-                top: '50%',
+                top: '60%',
                 transform: 'translate(-50%, -50%)'
               }}
             >
@@ -73,8 +73,8 @@ const Banner = () => {
                 minWidth: '100px', 
                 textAlign: 'center',
                 position: 'absolute',
-                left: '54%',
-                top: '50%',
+                left: '53.5%',
+                top: '60%',
                 transform: 'translate(-50%, -50%)'
               }}
             >
@@ -89,8 +89,8 @@ const Banner = () => {
                 minWidth: '80px', 
                 textAlign: 'center',
                 position: 'absolute',
-                left: '70.5%',
-                top: '50%',
+                left: '71.5%',
+                top: '59%',
                 transform: 'translate(-50%, -50%)'
               }}
             >
@@ -100,8 +100,10 @@ const Banner = () => {
           
                     {/* Right side - BUY HOOP button */}
           <button className="bg-transparent text-white font-bold px-4 py-2 rounded-full hover:bg-white/10 transition-colors text-sm" style={{
-            paddingLeft: '10.7rem',
-            marginRight: '4rem'
+            paddingLeft: '9.7rem',
+            marginRight: '1.5rem',
+            marginTop: '2rem',
+            paddingTop: '1rem'
           }}>
             
           </button>
