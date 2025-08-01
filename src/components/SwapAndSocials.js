@@ -1,7 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 
 const SwapAndSocials = () => {
+  const { scrollY } = useScroll();
+  
+  // Создаем трансформации для анимации заголовка
+  const titleY = useTransform(scrollY, [0, 150], [100, 0]);
+  const titleScale = useTransform(scrollY, [0, 150], [0.5, 1]);
+  const titleOpacity = useTransform(scrollY, [0, 100], [0, 1]);
+  
+  // Создаем трансформации для анимации контента
+  const contentY = useTransform(scrollY, [50, 200], [50, 0]);
+  const contentOpacity = useTransform(scrollY, [50, 200], [0, 1]);
+  const swapWidgetX = useTransform(scrollY, [100, 250], [-100, 0]);
+  const infoBlockX = useTransform(scrollY, [100, 250], [100, 0]);
+  const logosY = useTransform(scrollY, [150, 300], [50, 0]);
+  const logosOpacity = useTransform(scrollY, [150, 300], [0, 1]);
+  
   const [currentStep, setCurrentStep] = useState(0);
 
   const steps = [
@@ -65,30 +80,36 @@ const SwapAndSocials = () => {
     setCurrentStep(stepIndex);
   };
 
-           return (
-           <section id="how-to-buy" className="py-16 md:py-32 text-center min-h-screen flex items-center justify-center">
+  return (
+    <section id="how-to-buy" className="py-16 md:py-32 text-center min-h-screen flex items-center justify-center">
       <div className="w-full max-w-7xl mx-auto flex flex-col items-center">
         <div className="section-heading-container">
-                           <motion.img
-                   src="/Ref/hoop_page/n3.png"
-                   alt="How to Buy"
-                   className="mx-auto mb-8 md:mb-16 max-w-full h-auto"
-            initial={{ opacity: 0, y: 100 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-            viewport={{ once: true, margin: "-100px" }}
+          <motion.img
+            src="/Ref/hoop_page/n3.png"
+            alt="How to Buy"
+            className="mx-auto mb-8 md:mb-16 max-w-full h-auto"
+            style={{
+              y: titleY,
+              scale: titleScale,
+              opacity: titleOpacity
+            }}
+            initial={{ opacity: 0, y: 100, scale: 0.5 }}
           />
         </div>
         
-                       <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16 w-full">
-          
-                           {/* Swap Widget */}
-                 <motion.div
-                   className="w-full lg:w-[800px] h-[300px] md:h-[500px] lg:h-[600px] bg-black rounded-lg overflow-hidden shadow-xl"
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
+        <motion.div 
+          className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16 w-full"
+          style={{
+            y: contentY,
+            opacity: contentOpacity
+          }}
+        >
+          {/* Swap Widget */}
+          <motion.div
+            className="w-full lg:w-[800px] h-[300px] md:h-[500px] lg:h-[600px] bg-black rounded-lg overflow-hidden shadow-xl"
+            style={{
+              x: swapWidgetX
+            }}
           >
             <iframe
               src="https://jup.ag/swap?outputCurrency=SOL"
@@ -97,13 +118,12 @@ const SwapAndSocials = () => {
             />
           </motion.div>
 
-                           {/* Interactive Info Block */}
-                 <motion.div
-                   className="w-full lg:w-[1000px] h-[300px] md:h-[500px] lg:h-[600px] bg-[#f5a1a1] rounded-lg p-4 md:p-8 text-left shadow-lg relative"
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
+          {/* Interactive Info Block */}
+          <motion.div
+            className="w-full lg:w-[1000px] h-[300px] md:h-[500px] lg:h-[600px] bg-[#f5a1a1] rounded-lg p-4 md:p-8 text-left shadow-lg relative"
+            style={{
+              x: infoBlockX
+            }}
           >
             <AnimatePresence mode="wait">
               <motion.div
@@ -114,49 +134,49 @@ const SwapAndSocials = () => {
                 transition={{ duration: 0.5 }}
                 className="h-full flex flex-col"
               >
-                                       <h3 className="text-lg md:text-2xl font-bold mb-2 md:mb-3 text-white">{steps[currentStep].title}</h3>
-                       <p className="font-semibold text-base md:text-xl mb-1 md:mb-2 text-white">{steps[currentStep].subtitle}</p>
-                       <p className="text-sm md:text-base opacity-80 text-white mb-3 md:mb-4">{steps[currentStep].description}</p>
+                <h3 className="text-lg md:text-2xl font-bold mb-2 md:mb-3 text-white">{steps[currentStep].title}</h3>
+                <p className="font-semibold text-base md:text-xl mb-1 md:mb-2 text-white">{steps[currentStep].subtitle}</p>
+                <p className="text-sm md:text-base opacity-80 text-white mb-3 md:mb-4">{steps[currentStep].description}</p>
 
-                       <div className="flex-1">
-                         <h4 className="text-base md:text-lg font-bold text-white mb-2 md:mb-3">Quick Steps:</h4>
-                         <ul className="text-white space-y-1 md:space-y-2">
-                           {steps[currentStep].details.map((detail, index) => (
-                             <li key={index} className="flex items-center text-xs md:text-sm">
-                               <span className="w-1.5 md:w-2 h-1.5 md:h-2 bg-white rounded-full mr-2 md:mr-3 flex-shrink-0"></span>
-                               {detail}
-                             </li>
-                           ))}
-                         </ul>
-                       </div>
+                <div className="flex-1">
+                  <h4 className="text-base md:text-lg font-bold text-white mb-2 md:mb-3">Quick Steps:</h4>
+                  <ul className="text-white space-y-1 md:space-y-2">
+                    {steps[currentStep].details.map((detail, index) => (
+                      <li key={index} className="flex items-center text-xs md:text-sm">
+                        <span className="w-1.5 md:w-2 h-1.5 md:h-2 bg-white rounded-full mr-2 md:mr-3 flex-shrink-0"></span>
+                        {detail}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </motion.div>
             </AnimatePresence>
 
-                               {/* Step Indicators */}
-                   <div className="absolute bottom-2 md:bottom-4 left-1/2 transform -translate-x-1/2 flex gap-1 md:gap-2">
-                     {steps.map((_, index) => (
-                       <button
-                         key={index}
-                         onClick={() => handleStepChange(index)}
-                         className={`w-2 md:w-3 h-2 md:h-3 rounded-full transition-all duration-300 ${
-                           index === currentStep
-                             ? 'bg-white scale-125'
-                             : 'bg-white/50 hover:bg-white/70'
-                         }`}
-                       />
-                     ))}
-                   </div>
+            {/* Step Indicators */}
+            <div className="absolute bottom-2 md:bottom-4 left-1/2 transform -translate-x-1/2 flex gap-1 md:gap-2">
+              {steps.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => handleStepChange(index)}
+                  className={`w-2 md:w-3 h-2 md:h-3 rounded-full transition-all duration-300 ${
+                    index === currentStep
+                      ? 'bg-white scale-125'
+                      : 'bg-white/50 hover:bg-white/70'
+                  }`}
+                />
+              ))}
+            </div>
           </motion.div>
-        </div>
+        </motion.div>
 
-                       {/* Logos */}
-                              <motion.div
-                 className="flex justify-center gap-6 mt-16 relative"
-                 initial={{ opacity: 0, y: 30 }}
-                 whileInView={{ opacity: 1, y: 0 }}
-                 transition={{ duration: 0.8, delay: 0.6 }}
-                 viewport={{ once: true }}
-               >
+        {/* Logos */}
+        <motion.div
+          className="flex justify-center gap-6 mt-16 relative"
+          style={{
+            y: logosY,
+            opacity: logosOpacity
+          }}
+        >
           <a 
             href="https://dexscreener.com" 
             target="_blank" 

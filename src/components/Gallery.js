@@ -1,7 +1,13 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 const Gallery = () => {
+  const { scrollY } = useScroll();
+  
+  // Создаем трансформации для анимации заголовка
+  const titleY = useTransform(scrollY, [0, 150], [100, 0]);
+  const titleScale = useTransform(scrollY, [0, 150], [0.5, 1]);
+  const titleOpacity = useTransform(scrollY, [0, 100], [0, 1]);
   const galleryImages = [
     '/Ref/forGallery/1.png',
     '/Ref/forGallery/2.png',
@@ -19,10 +25,12 @@ const Gallery = () => {
                    src="/Ref/hoop_page/n1.png"
                    alt="Gallery"
                    className="mx-auto mb-8 md:mb-16 max-w-full h-auto"
-            initial={{ opacity: 0, y: 100 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-            viewport={{ once: true, margin: "-100px" }}
+                   style={{
+                     y: titleY,
+                     scale: titleScale,
+                     opacity: titleOpacity
+                   }}
+                   initial={{ opacity: 0, y: 100, scale: 0.5 }}
           />
         </div>
         
