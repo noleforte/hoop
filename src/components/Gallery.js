@@ -12,11 +12,11 @@ const Gallery = () => {
   ];
 
            return (
-           <section id="gallery" className="relative py-32 text-center overflow-hidden min-h-screen flex items-center">
+           <section id="gallery" className="relative py-16 md:py-32 text-center overflow-hidden min-h-screen flex items-center">
       <div className="w-full max-w-7xl mx-auto">
         <div className="section-heading-container">
                            <motion.h2
-                   className="text-8xl font-bold mb-16 font-gulkave text-gradient-heading"
+                   className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-8 md:mb-16 font-gulkave text-gradient-heading"
             initial={{ opacity: 0, y: 100 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
@@ -29,7 +29,7 @@ const Gallery = () => {
         {/* Two separate tunnels with moving images */}
                        <div className="relative mx-auto max-w-6xl">
                            {/* First tunnel - moving right */}
-                 <div className="relative h-[400px] overflow-hidden mb-6">
+                 <div className="relative h-[200px] sm:h-[300px] md:h-[400px] overflow-hidden mb-4 md:mb-6">
                    {/* Blur overlay for first tunnel edges */}
                    <div className="absolute inset-0 pointer-events-none z-10"
                         style={{
@@ -43,7 +43,7 @@ const Gallery = () => {
                        <div key={`tunnel1-original-${index}`} className="w-1/4 flex-shrink-0">
                          <img
                            src={image}
-                           className="w-full h-auto hover:scale-105 transition-transform duration-300"
+                           className="w-full h-auto hover:scale-105 transition-transform duration-300 object-cover"
                            alt={`Gallery ${index + 1}`}
                            onError={(e) => {
                              e.target.style.display = 'none';
@@ -56,7 +56,7 @@ const Gallery = () => {
                        <div key={`tunnel1-duplicate-${index}`} className="w-1/4 flex-shrink-0">
                          <img
                            src={image}
-                           className="w-full h-auto hover:scale-105 transition-transform duration-300"
+                           className="w-full h-auto hover:scale-105 transition-transform duration-300 object-cover"
                            alt={`Gallery ${index + 1}`}
                            onError={(e) => {
                              e.target.style.display = 'none';
@@ -68,7 +68,7 @@ const Gallery = () => {
                  </div>
           
                            {/* Second tunnel - moving left */}
-                 <div className="relative h-[400px] overflow-hidden">
+                 <div className="relative h-[200px] sm:h-[300px] md:h-[400px] overflow-hidden">
                    {/* Blur overlay for second tunnel edges */}
                    <div className="absolute inset-0 pointer-events-none z-10"
                         style={{
@@ -82,7 +82,7 @@ const Gallery = () => {
                        <div key={`tunnel2-original-${index}`} className="w-1/4 flex-shrink-0">
                          <img
                            src={image}
-                           className="w-full h-auto hover:scale-105 transition-transform duration-300"
+                           className="w-full h-auto hover:scale-105 transition-transform duration-300 object-cover"
                            alt={`Gallery ${index + 5}`}
                            onError={(e) => {
                              e.target.style.display = 'none';
@@ -95,7 +95,7 @@ const Gallery = () => {
                        <div key={`tunnel2-duplicate-${index}`} className="w-1/4 flex-shrink-0">
                          <img
                            src={image}
-                           className="w-full h-auto hover:scale-105 transition-transform duration-300"
+                           className="w-full h-auto hover:scale-105 transition-transform duration-300 object-cover"
                            alt={`Gallery ${index + 5}`}
                            onError={(e) => {
                              e.target.style.display = 'none';

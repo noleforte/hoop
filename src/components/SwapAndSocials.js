@@ -66,11 +66,11 @@ const SwapAndSocials = () => {
   };
 
            return (
-           <section id="how-to-buy" className="py-32 text-center min-h-screen flex items-center justify-center">
+           <section id="how-to-buy" className="py-16 md:py-32 text-center min-h-screen flex items-center justify-center">
       <div className="w-full max-w-7xl mx-auto flex flex-col items-center">
         <div className="section-heading-container">
                            <motion.h2
-                   className="text-8xl font-bold mb-16 font-gulkave text-gradient-heading"
+                   className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-8 md:mb-16 font-gulkave text-gradient-heading"
             initial={{ opacity: 0, y: 100 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
@@ -80,11 +80,11 @@ const SwapAndSocials = () => {
           </motion.h2>
         </div>
         
-                       <div className="flex flex-col md:flex-row items-center justify-center gap-16 max-w-7xl mx-auto">
+                       <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16 max-w-7xl mx-auto">
           
                            {/* Swap Widget */}
                  <motion.div
-                   className="w-[450px] h-[400px] bg-black rounded-lg overflow-hidden shadow-xl"
+                   className="w-full max-w-[450px] h-[300px] md:h-[400px] bg-black rounded-lg overflow-hidden shadow-xl"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -99,7 +99,7 @@ const SwapAndSocials = () => {
 
                            {/* Interactive Info Block */}
                  <motion.div
-                   className="w-[800px] h-[400px] bg-[#f5a1a1] rounded-lg p-8 text-left shadow-lg relative"
+                   className="w-full max-w-[800px] h-[300px] md:h-[400px] bg-[#f5a1a1] rounded-lg p-4 md:p-8 text-left shadow-lg relative"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -114,38 +114,38 @@ const SwapAndSocials = () => {
                 transition={{ duration: 0.5 }}
                 className="h-full flex flex-col"
               >
-                <h3 className="text-2xl font-bold mb-3 text-white">{steps[currentStep].title}</h3>
-                <p className="font-semibold text-xl mb-2 text-white">{steps[currentStep].subtitle}</p>
-                <p className="text-base opacity-80 text-white mb-4">{steps[currentStep].description}</p>
-                
-                <div className="flex-1">
-                  <h4 className="text-lg font-bold text-white mb-3">Quick Steps:</h4>
-                  <ul className="text-white space-y-2">
-                    {steps[currentStep].details.map((detail, index) => (
-                      <li key={index} className="flex items-center text-sm">
-                        <span className="w-2 h-2 bg-white rounded-full mr-3 flex-shrink-0"></span>
-                        {detail}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                                       <h3 className="text-lg md:text-2xl font-bold mb-2 md:mb-3 text-white">{steps[currentStep].title}</h3>
+                       <p className="font-semibold text-base md:text-xl mb-1 md:mb-2 text-white">{steps[currentStep].subtitle}</p>
+                       <p className="text-sm md:text-base opacity-80 text-white mb-3 md:mb-4">{steps[currentStep].description}</p>
+
+                       <div className="flex-1">
+                         <h4 className="text-base md:text-lg font-bold text-white mb-2 md:mb-3">Quick Steps:</h4>
+                         <ul className="text-white space-y-1 md:space-y-2">
+                           {steps[currentStep].details.map((detail, index) => (
+                             <li key={index} className="flex items-center text-xs md:text-sm">
+                               <span className="w-1.5 md:w-2 h-1.5 md:h-2 bg-white rounded-full mr-2 md:mr-3 flex-shrink-0"></span>
+                               {detail}
+                             </li>
+                           ))}
+                         </ul>
+                       </div>
               </motion.div>
             </AnimatePresence>
 
-            {/* Step Indicators */}
-            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
-              {steps.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => handleStepChange(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    index === currentStep 
-                      ? 'bg-white scale-125' 
-                      : 'bg-white/50 hover:bg-white/70'
-                  }`}
-                />
-              ))}
-            </div>
+                               {/* Step Indicators */}
+                   <div className="absolute bottom-2 md:bottom-4 left-1/2 transform -translate-x-1/2 flex gap-1 md:gap-2">
+                     {steps.map((_, index) => (
+                       <button
+                         key={index}
+                         onClick={() => handleStepChange(index)}
+                         className={`w-2 md:w-3 h-2 md:h-3 rounded-full transition-all duration-300 ${
+                           index === currentStep
+                             ? 'bg-white scale-125'
+                             : 'bg-white/50 hover:bg-white/70'
+                         }`}
+                       />
+                     ))}
+                   </div>
           </motion.div>
         </div>
 

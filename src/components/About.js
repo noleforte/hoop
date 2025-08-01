@@ -4,10 +4,10 @@ import { motion } from 'framer-motion';
 const About = () => {
 
            return (
-           <section id="about" className="w-full py-24">
+           <section id="about" className="w-full py-12 md:py-24">
                   <div className="section-heading-container">
                              <motion.h2
-                 className="text-center text-8xl font-bold mb-16 uppercase tracking-wide font-gulkave text-gradient-heading"
+                 className="text-center text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-8 md:mb-16 uppercase tracking-wide font-gulkave text-gradient-heading"
                 initial={{ opacity: 0, y: 100 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, ease: "easeOut" }}
@@ -17,7 +17,7 @@ const About = () => {
               </motion.h2>
             </div>
       
-                   <div className="w-full flex flex-col md:flex-row items-center justify-between gap-4 md:gap-8 relative px-4 md:px-0">
+                   <div className="w-full flex flex-col lg:flex-row items-center justify-between gap-4 lg:gap-8 relative px-4 lg:px-0">
         
                                       {/* Left character */}
                <motion.img
@@ -37,7 +37,7 @@ const About = () => {
         
                        {/* Center content box */}
                <motion.div
-                 className="bg-[#fff4ef] rounded-xl p-4 md:p-6 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg text-center shadow-md text-[#444] text-xs sm:text-sm leading-relaxed"
+                 className="bg-[#fff4ef] rounded-xl p-3 sm:p-4 md:p-6 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg text-center shadow-md text-[#444] text-xs sm:text-sm leading-relaxed"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}

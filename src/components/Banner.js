@@ -106,7 +106,7 @@ const Banner = () => {
       </header>
 
                    {/* Main HOOP Block */}
-             <section className="relative flex items-center justify-center h-screen overflow-hidden" style={{ marginTop: '120px' }}>
+             <section className="relative flex items-center justify-center h-screen overflow-hidden" style={{ marginTop: '80px', minHeight: 'calc(100vh - 80px)' }}>
                        <motion.div
                  className="relative"
           style={{
@@ -115,11 +115,11 @@ const Banner = () => {
             opacity
           }}
         >
-          <img 
-            src="/Ref/hoop_page/title.png" 
-            alt="HOOP Title" 
-            className="max-w-full h-auto"
-          />
+                           <img
+                   src="/Ref/hoop_page/title.png"
+                   alt="HOOP Title"
+                   className="w-full max-w-[90vw] md:max-w-[70vw] lg:max-w-[60vw] h-auto"
+                 />
         </motion.div>
       </section>
     </>
