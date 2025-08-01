@@ -86,7 +86,7 @@ const SwapAndSocials = () => {
         <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16 w-full">
           {/* Swap Widget */}
           <motion.div
-            className="w-full lg:w-[800px] h-[300px] md:h-[500px] lg:h-[600px] bg-black rounded-lg overflow-hidden shadow-xl"
+            className="w-full lg:w-[600px] h-[300px] md:h-[500px] lg:h-[400px] bg-black rounded-lg overflow-hidden shadow-xl"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -101,7 +101,7 @@ const SwapAndSocials = () => {
 
           {/* Interactive Info Block */}
           <motion.div
-            className="w-full lg:w-[1000px] h-[300px] md:h-[500px] lg:h-[600px] bg-[#f5a1a1] rounded-lg p-4 md:p-8 text-left shadow-lg relative"
+            className="w-full lg:w-[1000px] h-[300px] md:h-[500px] lg:h-[400px] bg-[#f5a1a1] rounded-lg p-4 md:p-8 text-left shadow-lg relative"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}

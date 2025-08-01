@@ -37,7 +37,7 @@ const About = () => {
         
                        {/* Center content box */}
                <motion.div
-                 className="bg-[#f5a2a2] rounded-xl p-3 sm:p-4 md:p-6 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg text-center shadow-md text-[#444] text-xs sm:text-sm leading-relaxed"
+                 className="bg-[#f5a2a2] rounded-xl p-3 sm:p-4 md:p-6 max-w-xs sm:max-w-sm md:max-w-sm lg:max-w-md text-center shadow-md text-[#444] text-xs sm:text-sm leading-relaxed"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
