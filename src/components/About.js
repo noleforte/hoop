@@ -4,15 +4,15 @@ import { motion } from 'framer-motion';
 const About = () => {
   return (
     <section id="about" className="w-full py-24 px-4">
-      <motion.h2 
-        className="text-center text-4xl font-bold text-[#f17f7f] mb-16 uppercase tracking-wide"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-      >
-        About Hoop
-      </motion.h2>
+                  <motion.h2
+              className="text-center text-4xl font-bold text-[#f17f7f] mb-16 uppercase tracking-wide font-gulkave"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              About Hoop
+            </motion.h2>
       
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center gap-8 relative">
         

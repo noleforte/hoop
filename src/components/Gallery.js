@@ -10,15 +10,14 @@ const Gallery = () => {
     '/Ref/forGallery/5.png',
     '/Ref/forGallery/6.png',
     '/Ref/forGallery/7.png',
-    '/Ref/forGallery/8.png',
-    '/Ref/forGallery/9.png'
+    '/Ref/forGallery/8.png'
   ];
 
   return (
     <section id="gallery" className="relative py-32 px-4 text-center overflow-hidden min-h-screen flex items-center">
       <div className="w-full max-w-7xl mx-auto">
         <motion.h2 
-          className="text-5xl font-bold text-white mb-16"
+          className="text-5xl font-bold text-white mb-16 font-gulkave"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -28,12 +27,13 @@ const Gallery = () => {
         </motion.h2>
         
         {/* Container with blur edges */}
-        <div className="relative mx-auto max-w-6xl grid grid-cols-2 md:grid-cols-3 gap-6 px-4 md:px-8">
-          {/* Optional: backdrop filters */}
+        <div className="relative mx-auto max-w-6xl grid grid-cols-2 md:grid-cols-4 gap-6 px-4 md:px-8 h-[600px]">
+          {/* Blur overlay for edges */}
           <div className="absolute inset-0 pointer-events-none z-10"
                style={{
-                 maskImage: 'linear-gradient(to right, transparent, black 20%, black 80%, transparent)',
-                 backdropFilter: 'blur(8px)'
+                 background: 'radial-gradient(ellipse at center, transparent 0%, transparent 60%, rgba(0,0,0,0.1) 80%, rgba(0,0,0,0.3) 100%)',
+                 maskImage: 'radial-gradient(ellipse at center, black 40%, transparent 80%)',
+                 WebkitMaskImage: 'radial-gradient(ellipse at center, black 40%, transparent 80%)'
                }}>
           </div>
 
@@ -49,7 +49,7 @@ const Gallery = () => {
             >
               <img 
                 src={image} 
-                className="rounded-lg shadow-lg w-full h-auto hover:scale-105 transition-transform duration-300" 
+                className="w-full h-auto hover:scale-105 transition-transform duration-300" 
                 alt={`Gallery ${index + 1}`}
                 onError={(e) => {
                   e.target.style.display = 'none';
