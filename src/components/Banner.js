@@ -109,7 +109,7 @@ const Banner = () => {
       </header>
 
                    {/* Main HOOP Block */}
-             <section className="relative flex items-center justify-center h-screen overflow-hidden" style={{ marginTop: '80px', minHeight: 'calc(100vh - 80px)' }}>
+             <section className="relative flex items-center justify-center h-screen overflow-hidden" style={{ marginTop: '80px', minHeight: 'calc(100vh - 80px)', marginBottom: '5%' }}>
                        <motion.div
                  className="relative"
           style={{
