@@ -36,17 +36,21 @@ const About = () => {
         />
         
                        {/* Center content box */}
-               <motion.div
-                 className="bg-[#f5a2a2] rounded-xl p-3 sm:p-4 md:p-6 max-w-xs sm:max-w-sm md:max-w-sm lg:max-w-md text-center shadow-md text-[#444] text-xs sm:text-sm leading-relaxed"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: false }}
-        >
-          <p>
-          Project HOOP is a collection of unique characters, each embodying a vivid archetype and carrying a one-of-a-kind story. Among them are a charismatic leader, a mischievous trickster, and a kind-hearted jester — their personalities are yours to shape. This isn’t just a collection — these are fragments of the HOOP universe, each revealing new sides of themselves over time.
-          </p>
-        </motion.div>
+               <div className="w-full flex flex-col items-center max-w-4xl mx-auto px-6">
+                 <div className="bg-[#fb928b] backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-white/20 shadow-2xl">
+                   <div className="space-y-6">
+                     <p className="font-gulkave text-white text-base sm:text-lg md:text-xl text-center leading-relaxed md:leading-loose">
+                       Project HOOP is a collection of unique characters, each embodying a vivid archetype and carrying a one-of-a-kind story.
+                     </p>
+                     <p className="font-gulkave text-white text-base sm:text-lg md:text-xl text-center leading-relaxed md:leading-loose">
+                       Among them are a charismatic leader, a mischievous trickster, and a kind-hearted jester — their personalities are yours to shape.
+                     </p>
+                     <p className="font-gulkave text-white text-base sm:text-lg md:text-xl text-center leading-relaxed md:leading-loose">
+                       This isn't just a collection — these are fragments of the HOOP universe, each revealing new sides of themselves over time.
+                     </p>
+                   </div>
+                 </div>
+               </div>
         
                                       {/* Right character */}
                <motion.img

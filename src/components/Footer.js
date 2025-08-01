@@ -12,7 +12,7 @@ const Footer = () => {
   return (
     <footer className="bg-[#bd4b4b] py-16" style={{ paddingLeft: '80px', paddingRight: '80px' }}>
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8 ml-64">
           
                     {/* Navigation */}
           <div className="text-center md:text-left">

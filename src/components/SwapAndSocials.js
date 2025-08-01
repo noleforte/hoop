@@ -101,7 +101,7 @@ const SwapAndSocials = () => {
 
           {/* Interactive Info Block */}
           <motion.div
-            className="w-full lg:w-[1000px] h-[300px] md:h-[500px] lg:h-[400px] bg-[#f5a1a1] rounded-lg p-4 md:p-8 text-left shadow-lg relative"
+            className="w-full lg:w-[1000px] h-[300px] md:h-[500px] lg:h-[400px] bg-[#fb928b] p-4 md:p-8 text-left shadow-lg relative rounded-2xl"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -116,15 +116,15 @@ const SwapAndSocials = () => {
                 transition={{ duration: 0.5 }}
                 className="h-full flex flex-col"
               >
-                <h3 className="text-lg md:text-2xl font-bold mb-2 md:mb-3 text-white">{steps[currentStep].title}</h3>
-                <p className="font-semibold text-base md:text-xl mb-1 md:mb-2 text-white">{steps[currentStep].subtitle}</p>
-                <p className="text-sm md:text-base opacity-80 text-white mb-3 md:mb-4">{steps[currentStep].description}</p>
+                <h3 className="font-gulkave text-xl md:text-3xl font-bold mb-2 md:mb-3 text-white">{steps[currentStep].title}</h3>
+                <p className="font-gulkave font-semibold text-lg md:text-2xl mb-1 md:mb-2 text-white">{steps[currentStep].subtitle}</p>
+                <p className="font-gulkave text-base md:text-lg opacity-80 text-white mb-3 md:mb-4">{steps[currentStep].description}</p>
 
                 <div className="flex-1">
-                  <h4 className="text-base md:text-lg font-bold text-white mb-2 md:mb-3">Quick Steps:</h4>
+                  <h4 className="font-gulkave text-lg md:text-xl font-bold text-white mb-2 md:mb-3">Quick Steps:</h4>
                   <ul className="text-white space-y-1 md:space-y-2">
                     {steps[currentStep].details.map((detail, index) => (
-                      <li key={index} className="flex items-center text-xs md:text-sm">
+                      <li key={index} className="flex items-center text-sm md:text-base font-gulkave">
                         <span className="w-1.5 md:w-2 h-1.5 md:h-2 bg-white rounded-full mr-2 md:mr-3 flex-shrink-0"></span>
                         {detail}
                       </li>
