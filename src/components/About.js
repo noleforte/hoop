@@ -7,7 +7,7 @@ const About = () => {
            <section id="about" className="w-full py-24">
                   <div className="section-heading-container">
                              <motion.h2
-                 className="text-center text-8xl font-bold mb-16 uppercase tracking-wide font-gulkave text-gradient-heading fade-out-effect"
+                 className="text-center text-8xl font-bold mb-16 uppercase tracking-wide font-gulkave text-gradient-heading"
                 initial={{ opacity: 0, y: 100 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, ease: "easeOut" }}
@@ -17,12 +17,12 @@ const About = () => {
               </motion.h2>
             </div>
       
-                   <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center gap-8 relative fade-out-effect">
+                   <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center gap-8 relative">
         
                        {/* Left character */}
                <motion.img
                  src="/Ref/hoop_page/char_1.png"
-                 className="w-72 md:w-[320px] object-contain fade-bottom fade-out-effect"
+                 className="w-72 md:w-[320px] object-contain fade-bottom"
           style={{
             maskImage: 'linear-gradient(to bottom, black 80%, transparent)', 
             WebkitMaskImage: 'linear-gradient(to bottom, black 80%, transparent)'
@@ -36,7 +36,7 @@ const About = () => {
         
                        {/* Center content box */}
                <motion.div
-                 className="bg-[#fff4ef] rounded-xl p-6 max-w-md text-center shadow-md text-[#444] text-sm leading-relaxed fade-out-effect"
+                 className="bg-[#fff4ef] rounded-xl p-6 max-w-md text-center shadow-md text-[#444] text-sm leading-relaxed"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -56,7 +56,7 @@ const About = () => {
                        {/* Right character */}
                <motion.img
                  src="/Ref/hoop_page/char_2.png"
-                 className="w-72 md:w-[320px] object-contain fade-bottom fade-out-effect"
+                 className="w-72 md:w-[320px] object-contain fade-bottom"
           style={{
             maskImage: 'linear-gradient(to bottom, black 80%, transparent)',
             WebkitMaskImage: 'linear-gradient(to bottom, black 80%, transparent)'

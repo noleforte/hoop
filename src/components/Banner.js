@@ -108,7 +108,7 @@ const Banner = () => {
                    {/* Main HOOP Block */}
              <section className="relative flex items-center justify-center h-screen overflow-hidden" style={{ marginTop: '120px' }}>
                        <motion.div
-                 className="relative fade-out-effect"
+                 className="relative"
           style={{
             y,
             scale,

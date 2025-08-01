@@ -144,43 +144,7 @@ code {
          z-index: -1;
        }
 
-       /* Universal fade-out effect for all elements */
-       .fade-out-effect {
-         position: relative;
-       }
 
-       .fade-out-effect::after {
-         content: '';
-         position: absolute;
-         left: 0;
-         right: 0;
-         bottom: -50px;
-         height: 80px;
-         background: linear-gradient(to bottom, rgba(255, 166, 176, 1) 0%, rgba(255, 166, 176, 0.9) 10%, rgba(255, 166, 176, 0.7) 25%, rgba(255, 166, 176, 0.5) 45%, rgba(255, 166, 176, 0.3) 65%, rgba(255, 166, 176, 0.1) 85%, transparent 100%);
-         filter: blur(20px);
-         z-index: -1;
-         pointer-events: none;
-       }
-
-       /* Fade-out effect for dark elements (like swap widget) */
-       .fade-out-effect-dark::after {
-         background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.9) 10%, rgba(0, 0, 0, 0.7) 25%, rgba(0, 0, 0, 0.5) 45%, rgba(0, 0, 0, 0.3) 65%, rgba(0, 0, 0, 0.1) 85%, transparent 100%);
-       }
-
-       /* Fade-out effect for light pink elements (like info block) */
-       .fade-out-effect-light-pink::after {
-         background: linear-gradient(to bottom, rgba(245, 161, 161, 1) 0%, rgba(245, 161, 161, 0.9) 10%, rgba(245, 161, 161, 0.7) 25%, rgba(245, 161, 161, 0.5) 45%, rgba(245, 161, 161, 0.3) 65%, rgba(245, 161, 161, 0.1) 85%, transparent 100%);
-       }
-
-       /* Fade-out effect for beige elements (like content box) */
-       .fade-out-effect-beige::after {
-         background: linear-gradient(to bottom, rgba(255, 244, 239, 1) 0%, rgba(255, 244, 239, 0.9) 10%, rgba(255, 244, 239, 0.7) 25%, rgba(255, 244, 239, 0.5) 45%, rgba(255, 244, 239, 0.3) 65%, rgba(255, 244, 239, 0.1) 85%, transparent 100%);
-       }
-
-       /* Fade-out effect for red footer */
-       .fade-out-effect-red::after {
-         background: linear-gradient(to bottom, rgba(189, 75, 75, 1) 0%, rgba(189, 75, 75, 0.9) 10%, rgba(189, 75, 75, 0.7) 25%, rgba(189, 75, 75, 0.5) 45%, rgba(189, 75, 75, 0.3) 65%, rgba(189, 75, 75, 0.1) 85%, transparent 100%);
-       }
 
 /* Mask fade bottom for character images */
 .mask-fade-bottom {
