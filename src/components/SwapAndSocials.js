@@ -11,46 +11,22 @@ const SwapAndSocials = () => {
     {
       title: "Step 1:",
       subtitle: "Create a wallet",
-      description: "You’re one step closer to the HOOP universe!",
-      details: [
-        "Download Phantom or Solflare wallet",
-        "Add SOL to your wallet",
-        "Connect wallet to Jupiter",
-        "Swap SOL for HOOP tokens"
-      ]
+      description: "You’re one step closer to the HOOP universe!"
     },
     {
       title: "Step 2:",
-      subtitle: "Connect to Jupiter",
-      description: "The best DEX aggregator!",
-      details: [
-        "Visit jup.ag in your browser",
-        "Connect your wallet",
-        "Select SOL as input token",
-        "Select HOOP as output token"
-      ]
+      subtitle: "Buy some SOL",
+      description: "At HOOP, we believe it's a magical internet coin with the ecosystem of the future"
     },
     {
       title: "Step 3:",
       subtitle: "Execute the swap",
-      description: "Get your HOOP tokens!",
-      details: [
-        "Enter the amount of SOL to swap",
-        "Review the transaction details",
-        "Confirm the swap in your wallet",
-        "Wait for transaction confirmation"
-      ]
+      description: "Get your HOOP tokens!"
     },
     {
       title: "Step 4:",
       subtitle: "Join the community",
-      description: "Welcome to the HOOP family!",
-      details: [
-        "Join our Telegram group",
-        "Follow us on Twitter/X",
-        "Share your HOOP journey",
-        "Stay updated with announcements"
-      ]
+      description: "Welcome to the HOOP family!"
     }
   ];
 
