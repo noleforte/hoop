@@ -13,10 +13,10 @@ function App() {
         background: 'linear-gradient(to bottom, #fee7bf 0%, #ffa6b0 100%)',
         minHeight: 'calc(100vh - 80px)' // Adjust for footer height
       }}>
-        <Banner />
-        <About />
-        <SwapAndSocials />
-        <Gallery />
+      <Banner />
+      <About />
+      <SwapAndSocials />
+      <Gallery />
       </div>
       
       {/* Footer with its own background */}

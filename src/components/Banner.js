@@ -1,19 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import { motion, useScroll } from 'framer-motion';
+import React from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 const Banner = () => {
-  const [hasScrolled, setHasScrolled] = useState(false);
   const { scrollY } = useScroll();
   
-  useEffect(() => {
-    const unsubscribe = scrollY.onChange((latest) => {
-      if (latest > 50) {
-        setHasScrolled(true);
-      }
-    });
-    
-    return () => unsubscribe();
-  }, [scrollY]);
+  // Создаем трансформации для анимации
+  const y = useTransform(scrollY, [0, 500], [200, 0]);
+  const scale = useTransform(scrollY, [0, 500], [0.3, 1]);
+  const opacity = useTransform(scrollY, [0, 300], [0, 1]);
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -115,12 +109,10 @@ const Banner = () => {
       <section className="relative flex items-center justify-center h-screen overflow-hidden">
         <motion.div
           className="relative"
-          initial={{ opacity: 0, y: 300, scale: 0.1 }}
-          animate={hasScrolled ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 300, scale: 0.1 }}
-          transition={{
-            duration: 2,
-            delay: 0,
-            ease: "easeOut"
+          style={{
+            y,
+            scale,
+            opacity
           }}
         >
           <img 
