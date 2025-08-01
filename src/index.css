@@ -69,6 +69,41 @@ code {
   font-style: normal;
 }
 
+/* Gallery animation */
+@keyframes slideLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.gallery-row-left {
+  animation: slideLeft 30s linear infinite;
+}
+
+.gallery-row-right {
+  animation: slideRight 30s linear infinite;
+}
+
+.gallery-tunnel-left {
+  animation: slideLeft 25s linear infinite;
+}
+
+.gallery-tunnel-right {
+  animation: slideRight 25s linear infinite;
+}
+
 /* Gradient text for section headings */
 .text-gradient-heading {
   background: linear-gradient(to bottom, #ffa6b0 0%, #fee7bf 100%);
@@ -76,6 +111,76 @@ code {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+       /* Invisible line with blur and dispersion for section headings */
+       .section-heading-container {
+         position: relative;
+       }
+
+       .section-heading-container::before {
+         content: '';
+         position: absolute;
+         left: 50%;
+         top: 50%;
+         transform: translate(-50%, -50%);
+         width: 100%;
+         height: 4px;
+         background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.5) 0%, transparent 70%);
+         filter: blur(12px);
+         z-index: -1;
+       }
+
+       /* Bottom blur and dispersion for section headings */
+       .section-heading-container::after {
+         content: '';
+         position: absolute;
+         left: 50%;
+         bottom: -20px;
+         transform: translate(-50%, 0);
+         width: 80%;
+         height: 30px;
+         background: linear-gradient(to bottom, rgba(255, 166, 176, 0.8) 0%, rgba(255, 166, 176, 0.4) 30%, rgba(255, 166, 176, 0.2) 60%, transparent 100%);
+         filter: blur(15px);
+         z-index: -1;
+       }
+
+       /* Universal fade-out effect for all elements */
+       .fade-out-effect {
+         position: relative;
+       }
+
+       .fade-out-effect::after {
+         content: '';
+         position: absolute;
+         left: 0;
+         right: 0;
+         bottom: -50px;
+         height: 80px;
+         background: linear-gradient(to bottom, rgba(255, 166, 176, 1) 0%, rgba(255, 166, 176, 0.9) 10%, rgba(255, 166, 176, 0.7) 25%, rgba(255, 166, 176, 0.5) 45%, rgba(255, 166, 176, 0.3) 65%, rgba(255, 166, 176, 0.1) 85%, transparent 100%);
+         filter: blur(20px);
+         z-index: -1;
+         pointer-events: none;
+       }
+
+       /* Fade-out effect for dark elements (like swap widget) */
+       .fade-out-effect-dark::after {
+         background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.9) 10%, rgba(0, 0, 0, 0.7) 25%, rgba(0, 0, 0, 0.5) 45%, rgba(0, 0, 0, 0.3) 65%, rgba(0, 0, 0, 0.1) 85%, transparent 100%);
+       }
+
+       /* Fade-out effect for light pink elements (like info block) */
+       .fade-out-effect-light-pink::after {
+         background: linear-gradient(to bottom, rgba(245, 161, 161, 1) 0%, rgba(245, 161, 161, 0.9) 10%, rgba(245, 161, 161, 0.7) 25%, rgba(245, 161, 161, 0.5) 45%, rgba(245, 161, 161, 0.3) 65%, rgba(245, 161, 161, 0.1) 85%, transparent 100%);
+       }
+
+       /* Fade-out effect for beige elements (like content box) */
+       .fade-out-effect-beige::after {
+         background: linear-gradient(to bottom, rgba(255, 244, 239, 1) 0%, rgba(255, 244, 239, 0.9) 10%, rgba(255, 244, 239, 0.7) 25%, rgba(255, 244, 239, 0.5) 45%, rgba(255, 244, 239, 0.3) 65%, rgba(255, 244, 239, 0.1) 85%, transparent 100%);
+       }
+
+       /* Fade-out effect for red footer */
+       .fade-out-effect-red::after {
+         background: linear-gradient(to bottom, rgba(189, 75, 75, 1) 0%, rgba(189, 75, 75, 0.9) 10%, rgba(189, 75, 75, 0.7) 25%, rgba(189, 75, 75, 0.5) 45%, rgba(189, 75, 75, 0.3) 65%, rgba(189, 75, 75, 0.1) 85%, transparent 100%);
+       }
 
 /* Mask fade bottom for character images */
 .mask-fade-bottom {

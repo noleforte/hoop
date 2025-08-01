@@ -5,9 +5,9 @@ const Banner = () => {
   const { scrollY } = useScroll();
   
   // Создаем трансформации для анимации
-  const y = useTransform(scrollY, [0, 500], [200, 0]);
-  const scale = useTransform(scrollY, [0, 500], [0.3, 1]);
-  const opacity = useTransform(scrollY, [0, 300], [0, 1]);
+  const y = useTransform(scrollY, [0, 200], [200, 0]);
+  const scale = useTransform(scrollY, [0, 200], [0.3, 1]);
+  const opacity = useTransform(scrollY, [0, 150], [0, 1]);
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -18,16 +18,16 @@ const Banner = () => {
 
   return (
     <>
-      {/* Header with image background */}
-      <header className="relative">
-        <img 
-          src="/Ref/hoop_page/top.png" 
-          alt="Header background" 
-          className="w-full h-auto"
-        />
-        
-        {/* Navigation buttons overlay */}
-        <div className="absolute inset-0 flex justify-between items-center px-6 py-3">
+                   {/* Header with image background */}
+             <header className="fixed top-0 left-0 right-0 z-50">
+               <img
+                 src="/Ref/hoop_page/top.png"
+                 alt="Header background"
+                 className="w-full h-auto"
+               />
+
+               {/* Navigation buttons overlay */}
+               <div className="absolute inset-0 flex justify-between items-center px-6 py-3">
           {/* Left side - Character icon area */}
           <div className="w-10 h-10 rounded-full cursor-pointer hover:bg-white/10 transition-colors"></div>
           
@@ -105,10 +105,10 @@ const Banner = () => {
         </div>
       </header>
 
-      {/* Main HOOP Block */}
-      <section className="relative flex items-center justify-center h-screen overflow-hidden">
-        <motion.div
-          className="relative"
+                   {/* Main HOOP Block */}
+             <section className="relative flex items-center justify-center h-screen overflow-hidden" style={{ marginTop: '120px' }}>
+                       <motion.div
+                 className="relative fade-out-effect"
           style={{
             y,
             scale,

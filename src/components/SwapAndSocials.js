@@ -65,24 +65,26 @@ const SwapAndSocials = () => {
     setCurrentStep(stepIndex);
   };
 
-  return (
-    <section id="how-to-buy" className="py-32 px-4 text-center min-h-screen flex items-center">
-      <div className="w-full max-w-7xl mx-auto">
-        <motion.h2 
-          className="text-8xl font-bold mb-16 font-gulkave text-gradient-heading"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          HOW TO BUY
-        </motion.h2>
+           return (
+           <section id="how-to-buy" className="py-32 text-center min-h-screen flex items-center justify-center">
+      <div className="w-full max-w-7xl mx-auto flex flex-col items-center">
+        <div className="section-heading-container">
+                           <motion.h2
+                   className="text-8xl font-bold mb-16 font-gulkave text-gradient-heading fade-out-effect"
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            HOW TO BUY
+          </motion.h2>
+        </div>
         
-        <div className="flex flex-col md:flex-row items-center justify-center gap-16 max-w-6xl mx-auto">
+                       <div className="flex flex-col md:flex-row items-center justify-center gap-16 max-w-7xl mx-auto fade-out-effect">
           
-          {/* Swap Widget */}
-          <motion.div 
-            className="w-[400px] h-[400px] bg-black rounded-lg overflow-hidden shadow-xl"
+                           {/* Swap Widget */}
+                 <motion.div
+                   className="w-[450px] h-[400px] bg-black rounded-lg overflow-hidden shadow-xl fade-out-effect"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -95,9 +97,9 @@ const SwapAndSocials = () => {
             />
           </motion.div>
 
-          {/* Interactive Info Block */}
-          <motion.div 
-            className="w-[400px] h-[400px] bg-[#f5a1a1] rounded-lg p-8 text-left shadow-lg relative"
+                           {/* Interactive Info Block */}
+                 <motion.div
+                   className="w-[800px] h-[400px] bg-[#f5a1a1] rounded-lg p-8 text-left shadow-lg relative fade-out-effect"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -147,9 +149,9 @@ const SwapAndSocials = () => {
           </motion.div>
         </div>
 
-        {/* Logos */}
-        <motion.div 
-          className="flex justify-center gap-6 mt-16"
+                       {/* Logos */}
+               <motion.div
+                 className="flex justify-center gap-6 mt-16 fade-out-effect"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}

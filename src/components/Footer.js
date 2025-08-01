@@ -2,8 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const Footer = () => {
-  return (
-    <footer className="bg-[#bd4b4b] py-6 flex justify-end px-6 gap-4">
+           return (
+           <footer className="bg-[#bd4b4b] py-6 flex justify-end gap-4 fade-out-effect">
       {/* Twitter/X Icon */}
       <a 
         href="https://twitter.com/hoop" 

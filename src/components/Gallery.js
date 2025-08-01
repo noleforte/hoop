@@ -8,55 +8,103 @@ const Gallery = () => {
     '/Ref/forGallery/3.png',
     '/Ref/forGallery/4.png',
     '/Ref/forGallery/5.png',
-    '/Ref/forGallery/6.png',
-    '/Ref/forGallery/7.png',
-    '/Ref/forGallery/8.png'
+    '/Ref/forGallery/6.png'
   ];
 
-  return (
-    <section id="gallery" className="relative py-32 px-4 text-center overflow-hidden min-h-screen flex items-center">
+           return (
+           <section id="gallery" className="relative py-32 text-center overflow-hidden min-h-screen flex items-center">
       <div className="w-full max-w-7xl mx-auto">
-        <motion.h2 
-          className="text-8xl font-bold mb-16 font-gulkave text-gradient-heading"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          GALLERY
-        </motion.h2>
+        <div className="section-heading-container">
+                           <motion.h2
+                   className="text-8xl font-bold mb-16 font-gulkave text-gradient-heading fade-out-effect"
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            GALLERY
+          </motion.h2>
+        </div>
         
-        {/* Container with blur edges */}
-        <div className="relative mx-auto max-w-6xl grid grid-cols-2 md:grid-cols-4 gap-6 px-4 md:px-8 h-[600px]">
-          {/* Blur overlay for edges */}
-          <div className="absolute inset-0 pointer-events-none z-10"
-               style={{
-                 background: 'radial-gradient(ellipse at center, transparent 0%, transparent 60%, rgba(0,0,0,0.1) 80%, rgba(0,0,0,0.3) 100%)',
-                 maskImage: 'radial-gradient(ellipse at center, black 40%, transparent 80%)',
-                 WebkitMaskImage: 'radial-gradient(ellipse at center, black 40%, transparent 80%)'
-               }}>
-          </div>
-
-          {/* Images */}
-          {galleryImages.map((image, index) => (
-            <motion.div
-              key={index}
-              className="relative z-20"
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-            >
-              <img 
-                src={image} 
-                className="w-full h-auto hover:scale-105 transition-transform duration-300" 
-                alt={`Gallery ${index + 1}`}
-                onError={(e) => {
-                  e.target.style.display = 'none';
-                }}
-              />
-            </motion.div>
-          ))}
+        {/* Two separate tunnels with moving images */}
+                       <div className="relative mx-auto max-w-6xl fade-out-effect">
+                           {/* First tunnel - moving right */}
+                 <div className="relative h-[400px] overflow-hidden mb-6">
+                   {/* Blur overlay for first tunnel edges */}
+                   <div className="absolute inset-0 pointer-events-none z-10"
+                        style={{
+                          background: 'linear-gradient(to right, rgba(255,166,176,0.9) 0%, rgba(255,166,176,0.6) 5%, rgba(255,166,176,0.3) 15%, transparent 30%, transparent 70%, rgba(255,166,176,0.3) 85%, rgba(255,166,176,0.6) 95%, rgba(255,166,176,0.9) 100%)',
+                          filter: 'blur(20px)'
+                        }}>
+                   </div>
+                   <div className="flex gap-6 gallery-tunnel-right" style={{ width: '200%' }}>
+                     {/* Original images - first 4 */}
+                     {galleryImages.slice(0, 4).map((image, index) => (
+                       <div key={`tunnel1-original-${index}`} className="w-1/4 flex-shrink-0 fade-out-effect">
+                         <img
+                           src={image}
+                           className="w-full h-auto hover:scale-105 transition-transform duration-300"
+                           alt={`Gallery ${index + 1}`}
+                           onError={(e) => {
+                             e.target.style.display = 'none';
+                           }}
+                         />
+                       </div>
+                     ))}
+                     {/* Duplicated images for seamless loop - first 4 */}
+                     {galleryImages.slice(0, 4).map((image, index) => (
+                       <div key={`tunnel1-duplicate-${index}`} className="w-1/4 flex-shrink-0 fade-out-effect">
+                         <img
+                           src={image}
+                           className="w-full h-auto hover:scale-105 transition-transform duration-300"
+                           alt={`Gallery ${index + 1}`}
+                           onError={(e) => {
+                             e.target.style.display = 'none';
+                           }}
+                         />
+                       </div>
+                     ))}
+                   </div>
+                 </div>
+          
+                           {/* Second tunnel - moving left */}
+                 <div className="relative h-[400px] overflow-hidden">
+                   {/* Blur overlay for second tunnel edges */}
+                   <div className="absolute inset-0 pointer-events-none z-10"
+                        style={{
+                          background: 'linear-gradient(to right, rgba(255,166,176,0.9) 0%, rgba(255,166,176,0.6) 5%, rgba(255,166,176,0.3) 15%, transparent 30%, transparent 70%, rgba(255,166,176,0.3) 85%, rgba(255,166,176,0.6) 95%, rgba(255,166,176,0.9) 100%)',
+                          filter: 'blur(20px)'
+                        }}>
+                   </div>
+                   <div className="flex gap-6 gallery-tunnel-left" style={{ width: '200%' }}>
+                     {/* Original images - last 4 */}
+                     {galleryImages.slice(4, 8).map((image, index) => (
+                       <div key={`tunnel2-original-${index}`} className="w-1/4 flex-shrink-0 fade-out-effect">
+                         <img
+                           src={image}
+                           className="w-full h-auto hover:scale-105 transition-transform duration-300"
+                           alt={`Gallery ${index + 5}`}
+                           onError={(e) => {
+                             e.target.style.display = 'none';
+                           }}
+                         />
+                       </div>
+                     ))}
+                     {/* Duplicated images for seamless loop - last 4 */}
+                     {galleryImages.slice(4, 8).map((image, index) => (
+                       <div key={`tunnel2-duplicate-${index}`} className="w-1/4 flex-shrink-0 fade-out-effect">
+                         <img
+                           src={image}
+                           className="w-full h-auto hover:scale-105 transition-transform duration-300"
+                           alt={`Gallery ${index + 5}`}
+                           onError={(e) => {
+                             e.target.style.display = 'none';
+                           }}
+                         />
+                       </div>
+                     ))}
+                   </div>
+                 </div>
         </div>
       </div>
     </section>
