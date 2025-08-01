@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import InfiniteScrollRow from './InfiniteScrollRow';
 
 const Gallery = () => {
   const galleryImages = [
@@ -8,7 +9,14 @@ const Gallery = () => {
     '/Ref/forGallery/3.png',
     '/Ref/forGallery/4.png',
     '/Ref/forGallery/5.png',
-    '/Ref/forGallery/6.png'
+    '/Ref/forGallery/6.png',
+    '/Ref/forGallery/7.png',
+    '/Ref/forGallery/8.png',
+    '/Ref/forGallery/9.png',
+    '/Ref/forGallery/10.png',
+    '/Ref/forGallery/11.png',
+    '/Ref/forGallery/12.png',
+    '/Ref/forGallery/13.png'
   ];
 
            return (
@@ -27,100 +35,24 @@ const Gallery = () => {
         </div>
         
         {/* Two separate tunnels with moving images */}
-                       <div className="relative mx-auto max-w-6xl">
-                           {/* First tunnel - moving right */}
-                 <div className="relative h-[200px] sm:h-[300px] md:h-[400px] overflow-hidden mb-4 md:mb-6">
-                   {/* Blur overlay for first tunnel edges */}
-                   <div className="absolute inset-0 pointer-events-none z-10"
-                        style={{
-                          background: 'linear-gradient(to right, rgba(255,166,176,1) 0%, rgba(255,166,176,0.9) 2%, rgba(255,166,176,0.7) 5%, rgba(255,166,176,0.4) 12%, rgba(255,166,176,0.1) 25%, transparent 45%, rgba(255,166,176,0.1) 75%, rgba(255,166,176,0.4) 88%, rgba(255,166,176,0.7) 95%, rgba(255,166,176,0.9) 98%, rgba(255,166,176,1) 100%)',
-                          filter: 'blur(40px)'
-                        }}>
-                   </div>
-                   <div className="flex gap-6 gallery-tunnel-right" style={{ width: '200%' }}>
-                     {/* Original images - first 4 */}
-                     {galleryImages.slice(0, 4).map((image, index) => (
-                       <div key={`tunnel1-original-${index}`} className="w-1/4 flex-shrink-0">
-                         <img
-                           src={image}
-                           className="w-full h-auto hover:scale-105 transition-transform duration-300 object-cover"
-                           style={{
-                             filter: index === 0 ? 'blur(8px)' : index === 1 ? 'blur(4px)' : index === 2 ? 'blur(2px)' : 'none',
-                             opacity: index === 0 ? 0.5 : index === 1 ? 0.75 : index === 2 ? 0.9 : 1
-                           }}
-                           alt={`Gallery ${index + 1}`}
-                           onError={(e) => {
-                             e.target.style.display = 'none';
-                           }}
-                         />
-                       </div>
-                     ))}
-                     {/* Duplicated images for seamless loop - first 4 */}
-                     {galleryImages.slice(0, 4).map((image, index) => (
-                       <div key={`tunnel1-duplicate-${index}`} className="w-1/4 flex-shrink-0">
-                         <img
-                           src={image}
-                           className="w-full h-auto hover:scale-105 transition-transform duration-300 object-cover"
-                           style={{
-                             filter: index === 0 ? 'blur(8px)' : index === 1 ? 'blur(4px)' : index === 2 ? 'blur(2px)' : 'none',
-                             opacity: index === 0 ? 0.5 : index === 1 ? 0.75 : index === 2 ? 0.9 : 1
-                           }}
-                           alt={`Gallery ${index + 1}`}
-                           onError={(e) => {
-                             e.target.style.display = 'none';
-                           }}
-                         />
-                       </div>
-                     ))}
-                   </div>
-                 </div>
+        <div className="relative mx-auto max-w-7xl space-y-8">
+          {/* First tunnel - moving right */}
+          <div className="relative h-[250px] sm:h-[350px] md:h-[450px] mb-8">
+            <InfiniteScrollRow 
+              images={galleryImages.slice(0, 8)} 
+              direction="right" 
+              speed={45} 
+            />
+          </div>
           
-                           {/* Second tunnel - moving left */}
-                 <div className="relative h-[200px] sm:h-[300px] md:h-[400px] overflow-hidden">
-                   {/* Blur overlay for second tunnel edges */}
-                   <div className="absolute inset-0 pointer-events-none z-10"
-                        style={{
-                          background: 'linear-gradient(to right, rgba(255,166,176,1) 0%, rgba(255,166,176,0.9) 2%, rgba(255,166,176,0.7) 5%, rgba(255,166,176,0.4) 12%, rgba(255,166,176,0.1) 25%, transparent 45%, rgba(255,166,176,0.1) 75%, rgba(255,166,176,0.4) 88%, rgba(255,166,176,0.7) 95%, rgba(255,166,176,0.9) 98%, rgba(255,166,176,1) 100%)',
-                          filter: 'blur(40px)'
-                        }}>
-                   </div>
-                   <div className="flex gap-6 gallery-tunnel-left" style={{ width: '200%' }}>
-                     {/* Original images - last 4 */}
-                     {galleryImages.slice(4, 8).map((image, index) => (
-                       <div key={`tunnel2-original-${index}`} className="w-1/4 flex-shrink-0">
-                         <img
-                           src={image}
-                           className="w-full h-auto hover:scale-105 transition-transform duration-300 object-cover"
-                           style={{
-                             filter: index === 0 ? 'blur(8px)' : index === 1 ? 'blur(4px)' : index === 2 ? 'blur(2px)' : 'none',
-                             opacity: index === 0 ? 0.5 : index === 1 ? 0.75 : index === 2 ? 0.9 : 1
-                           }}
-                           alt={`Gallery ${index + 5}`}
-                           onError={(e) => {
-                             e.target.style.display = 'none';
-                           }}
-                         />
-                       </div>
-                     ))}
-                     {/* Duplicated images for seamless loop - last 4 */}
-                     {galleryImages.slice(4, 8).map((image, index) => (
-                       <div key={`tunnel2-duplicate-${index}`} className="w-1/4 flex-shrink-0">
-                         <img
-                           src={image}
-                           className="w-full h-auto hover:scale-105 transition-transform duration-300 object-cover"
-                           style={{
-                             filter: index === 0 ? 'blur(8px)' : index === 1 ? 'blur(4px)' : index === 2 ? 'blur(2px)' : 'none',
-                             opacity: index === 0 ? 0.5 : index === 1 ? 0.75 : index === 2 ? 0.9 : 1
-                           }}
-                           alt={`Gallery ${index + 5}`}
-                           onError={(e) => {
-                             e.target.style.display = 'none';
-                           }}
-                         />
-                       </div>
-                     ))}
-                   </div>
-                 </div>
+          {/* Second tunnel - moving left */}
+          <div className="relative h-[250px] sm:h-[350px] md:h-[450px]">
+            <InfiniteScrollRow 
+              images={galleryImages.slice(6, 13)} 
+              direction="left" 
+              speed={40} 
+            />
+          </div>
         </div>
       </div>
     </section>
