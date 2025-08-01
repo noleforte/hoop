@@ -35,7 +35,7 @@ const Gallery = () => {
         </div>
         
         {/* Two separate tunnels with moving images */}
-        <div className="relative mx-auto max-w-7xl space-y-2">
+        <div className="relative mx-auto max-w-7xl space-y-32">
           {/* First tunnel - moving right */}
           <div className="relative h-[200px] sm:h-[300px] md:h-[250px]">
             <InfiniteScrollRow 

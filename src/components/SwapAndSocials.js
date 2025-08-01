@@ -10,8 +10,8 @@ const SwapAndSocials = () => {
   const steps = [
     {
       title: "Step 1:",
-      subtitle: "Setup a wallet",
-      description: "And take off with $HOOP!",
+      subtitle: "Create a wallet",
+      description: "You’re one step closer to the HOOP universe!",
       details: [
         "Download Phantom or Solflare wallet",
         "Add SOL to your wallet",
