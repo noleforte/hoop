@@ -92,9 +92,9 @@ const SwapAndSocials = () => {
                 transition={{ duration: 0.5 }}
                 className="h-full flex flex-col"
               >
-                <h3 className="font-gulkave text-xl md:text-3xl font-bold mb-2 md:mb-3 text-white">{steps[currentStep].title}</h3>
-                <p className="font-gulkave font-semibold text-lg md:text-2xl mb-1 md:mb-2 text-white">{steps[currentStep].subtitle}</p>
-                <p className="font-gulkave text-base md:text-lg opacity-80 text-white mb-3 md:mb-4">{steps[currentStep].description}</p>
+                <h3 className="font-gulkave text-2xl md:text-4xl font-bold mb-2 md:mb-3 text-white">{steps[currentStep].title}</h3>
+                <p className="font-gulkave font-semibold text-2xl md:text-4xl mb-1 md:mb-2 text-white">{steps[currentStep].subtitle}</p>
+                <p className="font-gulkave text-xl md:text-2xl opacity-80 text-white mb-3 md:mb-4">{steps[currentStep].description}</p>
 
                 {/* Step Indicators */}
                 <div className="absolute bottom-2 md:bottom-4 left-1/2 transform -translate-x-1/2 flex gap-1 md:gap-2">
