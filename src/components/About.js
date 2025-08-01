@@ -21,7 +21,7 @@ const About = () => {
           src="/Ref/hoop_page/char_1.png" 
           className="w-72 md:w-[320px] object-contain fade-bottom"
           style={{
-            maskImage: 'linear-gradient(to bottom, black 80%, transparent)',
+            maskImage: 'linear-gradient(to bottom, black 80%, transparent)', 
             WebkitMaskImage: 'linear-gradient(to bottom, black 80%, transparent)'
           }}
           initial={{ opacity: 0, x: -100 }}
