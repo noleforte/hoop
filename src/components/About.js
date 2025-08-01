@@ -6,15 +6,15 @@ const About = () => {
            return (
            <section id="about" className="w-full py-12 md:py-24">
                   <div className="section-heading-container">
-                             <motion.h2
-                 className="text-center text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-8 md:mb-16 uppercase tracking-wide font-gulkave text-gradient-heading"
+                             <motion.img
+                 src="/Ref/hoop_page/n2.png"
+                 alt="About Hoop"
+                 className="mx-auto mb-8 md:mb-16 max-w-full h-auto"
                 initial={{ opacity: 0, y: 100 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, ease: "easeOut" }}
                 viewport={{ once: true, margin: "-100px" }}
-              >
-                About Hoop
-              </motion.h2>
+              />
             </div>
       
                    <div className="w-full flex flex-col lg:flex-row items-center justify-between gap-4 lg:gap-8 relative px-4 lg:px-0">

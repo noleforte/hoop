@@ -19,15 +19,15 @@ const Banner = () => {
   return (
     <>
                    {/* Header with image background */}
-             <header className="fixed top-0 left-0 right-0 z-50">
+             <header className="fixed top-0 left-0 right-0 z-50" style={{ paddingLeft: '80px', paddingRight: '80px' }}>
                <img
                  src="/Ref/hoop_page/top.png"
                  alt="Header background"
-                 className="w-full h-auto"
+                 className="w-full h-auto mx-auto"
                />
 
                {/* Navigation buttons overlay */}
-               <div className="absolute inset-0 flex justify-between items-center px-6 py-3">
+               <div className="absolute inset-0 flex justify-between items-center py-3" style={{ paddingLeft: '80px', paddingRight: '80px' }}>
           {/* Left side - Character icon area */}
           <div className="w-10 h-10 rounded-full cursor-pointer hover:bg-white/10 transition-colors"></div>
           
@@ -41,7 +41,7 @@ const Banner = () => {
                 minWidth: '60px', 
                 textAlign: 'center',
                 position: 'absolute',
-                left: '20%',
+                left: '23%',
                 top: '50%',
                 transform: 'translate(-50%, -50%)'
               }}
@@ -57,7 +57,7 @@ const Banner = () => {
                 minWidth: '100px', 
                 textAlign: 'center',
                 position: 'absolute',
-                left: '36.5%',
+                left: '37.5%',
                 top: '50%',
                 transform: 'translate(-50%, -50%)'
               }}
@@ -89,7 +89,7 @@ const Banner = () => {
                 minWidth: '80px', 
                 textAlign: 'center',
                 position: 'absolute',
-                left: '73%',
+                left: '70.5%',
                 top: '50%',
                 transform: 'translate(-50%, -50%)'
               }}
@@ -98,8 +98,11 @@ const Banner = () => {
             </button>
           </div>
           
-          {/* Right side - BUY HOOP button */}
-          <button className="bg-transparent text-white font-bold px-4 py-2 rounded-full hover:bg-white/10 transition-colors text-sm">
+                    {/* Right side - BUY HOOP button */}
+          <button className="bg-transparent text-white font-bold px-4 py-2 rounded-full hover:bg-white/10 transition-colors text-sm" style={{
+            paddingLeft: '10.7rem',
+            marginRight: '4rem'
+          }}>
             
           </button>
         </div>

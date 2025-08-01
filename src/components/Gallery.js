@@ -15,15 +15,15 @@ const Gallery = () => {
            <section id="gallery" className="relative py-16 md:py-32 text-center overflow-hidden min-h-screen flex items-center">
       <div className="w-full max-w-7xl mx-auto">
         <div className="section-heading-container">
-                           <motion.h2
-                   className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-8 md:mb-16 font-gulkave text-gradient-heading"
+                           <motion.img
+                   src="/Ref/hoop_page/n1.png"
+                   alt="Gallery"
+                   className="mx-auto mb-8 md:mb-16 max-w-full h-auto"
             initial={{ opacity: 0, y: 100 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
             viewport={{ once: true, margin: "-100px" }}
-          >
-            GALLERY
-          </motion.h2>
+          />
         </div>
         
         {/* Two separate tunnels with moving images */}
@@ -33,8 +33,8 @@ const Gallery = () => {
                    {/* Blur overlay for first tunnel edges */}
                    <div className="absolute inset-0 pointer-events-none z-10"
                         style={{
-                          background: 'linear-gradient(to right, rgba(255,166,176,0.9) 0%, rgba(255,166,176,0.6) 5%, rgba(255,166,176,0.3) 15%, transparent 30%, transparent 70%, rgba(255,166,176,0.3) 85%, rgba(255,166,176,0.6) 95%, rgba(255,166,176,0.9) 100%)',
-                          filter: 'blur(20px)'
+                          background: 'linear-gradient(to right, rgba(255,166,176,1) 0%, rgba(255,166,176,0.9) 2%, rgba(255,166,176,0.7) 5%, rgba(255,166,176,0.4) 12%, rgba(255,166,176,0.1) 25%, transparent 45%, rgba(255,166,176,0.1) 75%, rgba(255,166,176,0.4) 88%, rgba(255,166,176,0.7) 95%, rgba(255,166,176,0.9) 98%, rgba(255,166,176,1) 100%)',
+                          filter: 'blur(40px)'
                         }}>
                    </div>
                    <div className="flex gap-6 gallery-tunnel-right" style={{ width: '200%' }}>
@@ -44,6 +44,10 @@ const Gallery = () => {
                          <img
                            src={image}
                            className="w-full h-auto hover:scale-105 transition-transform duration-300 object-cover"
+                           style={{
+                             filter: index === 0 ? 'blur(8px)' : index === 1 ? 'blur(4px)' : index === 2 ? 'blur(2px)' : 'none',
+                             opacity: index === 0 ? 0.5 : index === 1 ? 0.75 : index === 2 ? 0.9 : 1
+                           }}
                            alt={`Gallery ${index + 1}`}
                            onError={(e) => {
                              e.target.style.display = 'none';
@@ -57,6 +61,10 @@ const Gallery = () => {
                          <img
                            src={image}
                            className="w-full h-auto hover:scale-105 transition-transform duration-300 object-cover"
+                           style={{
+                             filter: index === 0 ? 'blur(8px)' : index === 1 ? 'blur(4px)' : index === 2 ? 'blur(2px)' : 'none',
+                             opacity: index === 0 ? 0.5 : index === 1 ? 0.75 : index === 2 ? 0.9 : 1
+                           }}
                            alt={`Gallery ${index + 1}`}
                            onError={(e) => {
                              e.target.style.display = 'none';
@@ -72,8 +80,8 @@ const Gallery = () => {
                    {/* Blur overlay for second tunnel edges */}
                    <div className="absolute inset-0 pointer-events-none z-10"
                         style={{
-                          background: 'linear-gradient(to right, rgba(255,166,176,0.9) 0%, rgba(255,166,176,0.6) 5%, rgba(255,166,176,0.3) 15%, transparent 30%, transparent 70%, rgba(255,166,176,0.3) 85%, rgba(255,166,176,0.6) 95%, rgba(255,166,176,0.9) 100%)',
-                          filter: 'blur(20px)'
+                          background: 'linear-gradient(to right, rgba(255,166,176,1) 0%, rgba(255,166,176,0.9) 2%, rgba(255,166,176,0.7) 5%, rgba(255,166,176,0.4) 12%, rgba(255,166,176,0.1) 25%, transparent 45%, rgba(255,166,176,0.1) 75%, rgba(255,166,176,0.4) 88%, rgba(255,166,176,0.7) 95%, rgba(255,166,176,0.9) 98%, rgba(255,166,176,1) 100%)',
+                          filter: 'blur(40px)'
                         }}>
                    </div>
                    <div className="flex gap-6 gallery-tunnel-left" style={{ width: '200%' }}>
@@ -83,6 +91,10 @@ const Gallery = () => {
                          <img
                            src={image}
                            className="w-full h-auto hover:scale-105 transition-transform duration-300 object-cover"
+                           style={{
+                             filter: index === 0 ? 'blur(8px)' : index === 1 ? 'blur(4px)' : index === 2 ? 'blur(2px)' : 'none',
+                             opacity: index === 0 ? 0.5 : index === 1 ? 0.75 : index === 2 ? 0.9 : 1
+                           }}
                            alt={`Gallery ${index + 5}`}
                            onError={(e) => {
                              e.target.style.display = 'none';
@@ -96,6 +108,10 @@ const Gallery = () => {
                          <img
                            src={image}
                            className="w-full h-auto hover:scale-105 transition-transform duration-300 object-cover"
+                           style={{
+                             filter: index === 0 ? 'blur(8px)' : index === 1 ? 'blur(4px)' : index === 2 ? 'blur(2px)' : 'none',
+                             opacity: index === 0 ? 0.5 : index === 1 ? 0.75 : index === 2 ? 0.9 : 1
+                           }}
                            alt={`Gallery ${index + 5}`}
                            onError={(e) => {
                              e.target.style.display = 'none';

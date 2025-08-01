@@ -69,15 +69,15 @@ const SwapAndSocials = () => {
            <section id="how-to-buy" className="py-16 md:py-32 text-center min-h-screen flex items-center justify-center">
       <div className="w-full max-w-7xl mx-auto flex flex-col items-center">
         <div className="section-heading-container">
-                           <motion.h2
-                   className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-8 md:mb-16 font-gulkave text-gradient-heading"
+                           <motion.img
+                   src="/Ref/hoop_page/n3.png"
+                   alt="How to Buy"
+                   className="mx-auto mb-8 md:mb-16 max-w-full h-auto"
             initial={{ opacity: 0, y: 100 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
             viewport={{ once: true, margin: "-100px" }}
-          >
-            HOW TO BUY
-          </motion.h2>
+          />
         </div>
         
                        <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16 w-full">
@@ -150,35 +150,55 @@ const SwapAndSocials = () => {
         </div>
 
                        {/* Logos */}
-               <motion.div
-                 className="flex justify-center gap-6 mt-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          viewport={{ once: true }}
-        >
+                              <motion.div
+                 className="flex justify-center gap-6 mt-16 relative"
+                 initial={{ opacity: 0, y: 30 }}
+                 whileInView={{ opacity: 1, y: 0 }}
+                 transition={{ duration: 0.8, delay: 0.6 }}
+                 viewport={{ once: true }}
+               >
           <a 
             href="https://dexscreener.com" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="w-12 h-12 object-contain cursor-pointer hover:scale-110 transition-transform duration-200"
+            className="w-16 h-16 object-contain cursor-pointer hover:scale-110 transition-transform duration-200 relative"
           >
             <img 
               src="/Ref/hoop_page/dex_button.png" 
               alt="DEX Screener" 
               className="w-full h-full object-contain"
+              style={{
+                opacity: 0.8
+              }}
+            />
+            {/* Fade-out effect for DEX Screener */}
+            <div className="absolute inset-0 pointer-events-none"
+                 style={{
+                   background: 'linear-gradient(to bottom, transparent 0%, transparent 50%, rgba(254,184,180,0.6) 70%, rgba(254,184,180,1) 100%)',
+                   filter: 'blur(8px)'
+                 }}
             />
           </a>
           <a 
             href="https://dextools.io" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="w-12 h-12 object-contain cursor-pointer hover:scale-110 transition-transform duration-200"
+            className="w-16 h-16 object-contain cursor-pointer hover:scale-110 transition-transform duration-200 relative"
           >
             <img 
               src="/Ref/hoop_page/button_dex.png" 
               alt="DEX Tools" 
               className="w-full h-full object-contain"
+              style={{
+                opacity: 0.8
+              }}
+            />
+            {/* Fade-out effect for DEX Tools */}
+            <div className="absolute inset-0 pointer-events-none"
+                 style={{
+                   background: 'linear-gradient(to bottom, transparent 0%, transparent 50%, rgba(254,184,180,0.6) 70%, rgba(254,184,180,1) 100%)',
+                   filter: 'blur(8px)'
+                 }}
             />
           </a>
         </motion.div>
