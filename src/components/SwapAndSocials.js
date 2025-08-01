@@ -69,7 +69,7 @@ const SwapAndSocials = () => {
     <section id="how-to-buy" className="py-32 px-4 text-center min-h-screen flex items-center">
       <div className="w-full max-w-7xl mx-auto">
         <motion.h2 
-          className="text-5xl font-bold text-white mb-16 font-gulkave"
+          className="text-8xl font-bold mb-16 font-gulkave text-gradient-heading"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}

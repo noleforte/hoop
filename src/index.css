@@ -69,6 +69,14 @@ code {
   font-style: normal;
 }
 
+/* Gradient text for section headings */
+.text-gradient-heading {
+  background: linear-gradient(to bottom, #ffa6b0 0%, #fee7bf 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 /* Mask fade bottom for character images */
 .mask-fade-bottom {
   -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent);
