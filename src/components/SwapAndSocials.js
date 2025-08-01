@@ -79,7 +79,7 @@ const SwapAndSocials = () => {
             initial={{ opacity: 0, y: 100, scale: 0.5 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
           />
         </div>
         
@@ -90,7 +90,7 @@ const SwapAndSocials = () => {
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
           >
             <iframe
               src="https://jup.ag/swap?outputCurrency=SOL"
@@ -105,7 +105,7 @@ const SwapAndSocials = () => {
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
           >
             <AnimatePresence mode="wait">
               <motion.div
@@ -157,7 +157,7 @@ const SwapAndSocials = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
         >
           <a 
             href="https://dexscreener.com" 

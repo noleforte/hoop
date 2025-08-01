@@ -1,13 +1,7 @@
 import React from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const Gallery = () => {
-  const { scrollY } = useScroll();
-  
-  // Создаем трансформации для анимации заголовка
-  const titleY = useTransform(scrollY, [0, 150], [100, 0]);
-  const titleScale = useTransform(scrollY, [0, 150], [0.5, 1]);
-  const titleOpacity = useTransform(scrollY, [0, 100], [0, 1]);
   const galleryImages = [
     '/Ref/forGallery/1.png',
     '/Ref/forGallery/2.png',
@@ -20,17 +14,15 @@ const Gallery = () => {
            return (
            <section id="gallery" className="relative py-16 md:py-32 text-center overflow-hidden min-h-screen flex items-center">
       <div className="w-full max-w-7xl mx-auto">
-        <div className="section-heading-container">
-                           <motion.img
-                   src="/Ref/hoop_page/n1.png"
-                   alt="Gallery"
-                   className="mx-auto mb-8 md:mb-16 max-w-full h-auto"
-                   style={{
-                     y: titleY,
-                     scale: titleScale,
-                     opacity: titleOpacity
-                   }}
-                   initial={{ opacity: 0, y: 100, scale: 0.5 }}
+                <div className="section-heading-container">
+          <motion.img
+            src="/Ref/hoop_page/n1.png"
+            alt="Gallery"
+            className="mx-auto mb-8 md:mb-16 max-w-full h-auto"
+            initial={{ opacity: 0, y: 100, scale: 0.5 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: false }}
           />
         </div>
         
