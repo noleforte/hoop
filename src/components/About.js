@@ -52,13 +52,7 @@ const About = () => {
           viewport={{ once: true }}
         >
           <p>
-            HOOP is a revolutionary NFT collection that brings together the best of gaming, art, and community.
-            Each character is uniquely designed with distinctive traits and personalities that make them truly special.
-          </p>
-          <br />
-          <p>
-            Join our vibrant community and discover the endless possibilities that await in the HOOP universe.
-            From rare collectibles to exclusive experiences, there's something for everyone in the HOOP ecosystem.
+          Project HOOP is a collection of unique characters, each embodying a vivid archetype and carrying a one-of-a-kind story. Among them are a charismatic leader, a mischievous trickster, and a kind-hearted jester — their personalities are yours to shape. This isn’t just a collection — these are fragments of the HOOP universe, each revealing new sides of themselves over time.
           </p>
         </motion.div>
         

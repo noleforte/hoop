@@ -1,21 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const SwapAndSocials = () => {
-  const { scrollY } = useScroll();
   
-  // Создаем трансформации для анимации заголовка
-  const titleY = useTransform(scrollY, [0, 150], [100, 0]);
-  const titleScale = useTransform(scrollY, [0, 150], [0.5, 1]);
-  const titleOpacity = useTransform(scrollY, [0, 100], [0, 1]);
-  
-  // Создаем трансформации для анимации контента
-  const contentY = useTransform(scrollY, [50, 200], [50, 0]);
-  const contentOpacity = useTransform(scrollY, [50, 200], [0, 1]);
-  const swapWidgetX = useTransform(scrollY, [100, 250], [-100, 0]);
-  const infoBlockX = useTransform(scrollY, [100, 250], [100, 0]);
-  const logosY = useTransform(scrollY, [150, 300], [50, 0]);
-  const logosOpacity = useTransform(scrollY, [150, 300], [0, 1]);
+
   
   const [currentStep, setCurrentStep] = useState(0);
 
@@ -88,28 +76,21 @@ const SwapAndSocials = () => {
             src="/Ref/hoop_page/n3.png"
             alt="How to Buy"
             className="mx-auto mb-8 md:mb-16 max-w-full h-auto"
-            style={{
-              y: titleY,
-              scale: titleScale,
-              opacity: titleOpacity
-            }}
             initial={{ opacity: 0, y: 100, scale: 0.5 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
           />
         </div>
         
-        <motion.div 
-          className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16 w-full"
-          style={{
-            y: contentY,
-            opacity: contentOpacity
-          }}
-        >
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16 w-full">
           {/* Swap Widget */}
           <motion.div
             className="w-full lg:w-[800px] h-[300px] md:h-[500px] lg:h-[600px] bg-black rounded-lg overflow-hidden shadow-xl"
-            style={{
-              x: swapWidgetX
-            }}
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
           >
             <iframe
               src="https://jup.ag/swap?outputCurrency=SOL"
@@ -121,9 +102,10 @@ const SwapAndSocials = () => {
           {/* Interactive Info Block */}
           <motion.div
             className="w-full lg:w-[1000px] h-[300px] md:h-[500px] lg:h-[600px] bg-[#f5a1a1] rounded-lg p-4 md:p-8 text-left shadow-lg relative"
-            style={{
-              x: infoBlockX
-            }}
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
           >
             <AnimatePresence mode="wait">
               <motion.div
@@ -167,15 +149,15 @@ const SwapAndSocials = () => {
               ))}
             </div>
           </motion.div>
-        </motion.div>
+        </div>
 
         {/* Logos */}
         <motion.div
           className="flex justify-center gap-6 mt-16 relative"
-          style={{
-            y: logosY,
-            opacity: logosOpacity
-          }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          viewport={{ once: true }}
         >
           <a 
             href="https://dexscreener.com" 
