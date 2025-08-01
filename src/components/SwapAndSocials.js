@@ -1,7 +1,70 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const SwapAndSocials = () => {
+  const [currentStep, setCurrentStep] = useState(0);
+
+  const steps = [
+    {
+      title: "Step 1:",
+      subtitle: "Setup a wallet",
+      description: "And take off with $HOOP!",
+      details: [
+        "Download Phantom or Solflare wallet",
+        "Add SOL to your wallet",
+        "Connect wallet to Jupiter",
+        "Swap SOL for HOOP tokens"
+      ]
+    },
+    {
+      title: "Step 2:",
+      subtitle: "Connect to Jupiter",
+      description: "The best DEX aggregator!",
+      details: [
+        "Visit jup.ag in your browser",
+        "Connect your wallet",
+        "Select SOL as input token",
+        "Select HOOP as output token"
+      ]
+    },
+    {
+      title: "Step 3:",
+      subtitle: "Execute the swap",
+      description: "Get your HOOP tokens!",
+      details: [
+        "Enter the amount of SOL to swap",
+        "Review the transaction details",
+        "Confirm the swap in your wallet",
+        "Wait for transaction confirmation"
+      ]
+    },
+    {
+      title: "Step 4:",
+      subtitle: "Join the community",
+      description: "Welcome to the HOOP family!",
+      details: [
+        "Join our Telegram group",
+        "Follow us on Twitter/X",
+        "Share your HOOP journey",
+        "Stay updated with announcements"
+      ]
+    }
+  ];
+
+  // Auto-advance every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentStep((prev) => (prev + 1) % steps.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [currentStep, steps.length]);
+
+  // Function to handle manual step change
+  const handleStepChange = (stepIndex) => {
+    setCurrentStep(stepIndex);
+  };
+
   return (
     <section id="how-to-buy" className="py-32 px-4 text-center min-h-screen flex items-center">
       <div className="w-full max-w-7xl mx-auto">
@@ -19,7 +82,7 @@ const SwapAndSocials = () => {
           
           {/* Swap Widget */}
           <motion.div 
-            className="w-[400px] h-[320px] bg-black rounded-lg overflow-hidden shadow-xl"
+            className="w-[400px] h-[400px] bg-black rounded-lg overflow-hidden shadow-xl"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -32,38 +95,54 @@ const SwapAndSocials = () => {
             />
           </motion.div>
 
-          {/* Info Block */}
+          {/* Interactive Info Block */}
           <motion.div 
-            className="w-[400px] h-[320px] bg-[#f5a1a1] rounded-lg p-8 text-left shadow-lg"
+            className="w-[400px] h-[400px] bg-[#f5a1a1] rounded-lg p-8 text-left shadow-lg relative"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-3xl font-bold mb-4 text-white">Step 1:</h3>
-            <p className="font-semibold text-2xl mb-2 text-white">Setup a wallet</p>
-            <p className="text-lg opacity-80 text-white">And take off with $HOOP!</p>
-            
-            <div className="mt-10">
-              <h4 className="text-xl font-bold text-white mb-4">Quick Steps:</h4>
-              <ul className="text-white space-y-3">
-                <li className="flex items-center">
-                  <span className="w-3 h-3 bg-white rounded-full mr-4"></span>
-                  Download Phantom or Solflare wallet
-                </li>
-                <li className="flex items-center">
-                  <span className="w-3 h-3 bg-white rounded-full mr-4"></span>
-                  Add SOL to your wallet
-                </li>
-                <li className="flex items-center">
-                  <span className="w-3 h-3 bg-white rounded-full mr-4"></span>
-                  Connect wallet to Jupiter
-                </li>
-                <li className="flex items-center">
-                  <span className="w-3 h-3 bg-white rounded-full mr-4"></span>
-                  Swap SOL for HOOP tokens
-                </li>
-              </ul>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentStep}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 0.5 }}
+                className="h-full flex flex-col"
+              >
+                <h3 className="text-2xl font-bold mb-3 text-white">{steps[currentStep].title}</h3>
+                <p className="font-semibold text-xl mb-2 text-white">{steps[currentStep].subtitle}</p>
+                <p className="text-base opacity-80 text-white mb-4">{steps[currentStep].description}</p>
+                
+                <div className="flex-1">
+                  <h4 className="text-lg font-bold text-white mb-3">Quick Steps:</h4>
+                  <ul className="text-white space-y-2">
+                    {steps[currentStep].details.map((detail, index) => (
+                      <li key={index} className="flex items-center text-sm">
+                        <span className="w-2 h-2 bg-white rounded-full mr-3 flex-shrink-0"></span>
+                        {detail}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </motion.div>
+            </AnimatePresence>
+
+            {/* Step Indicators */}
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
+              {steps.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => handleStepChange(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    index === currentStep 
+                      ? 'bg-white scale-125' 
+                      : 'bg-white/50 hover:bg-white/70'
+                  }`}
+                />
+              ))}
             </div>
           </motion.div>
         </div>
@@ -76,12 +155,30 @@ const SwapAndSocials = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
         >
-          <div className="w-12 h-12 rounded-full shadow bg-white/20 backdrop-blur-sm flex items-center justify-center">
-            <span className="text-white font-bold text-sm">SOL</span>
-          </div>
-          <div className="w-12 h-12 rounded-full shadow bg-white/20 backdrop-blur-sm flex items-center justify-center">
-            <span className="text-white font-bold text-sm">HOOP</span>
-          </div>
+          <a 
+            href="https://dexscreener.com" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="w-12 h-12 object-contain cursor-pointer hover:scale-110 transition-transform duration-200"
+          >
+            <img 
+              src="/Ref/hoop_page/dex_button.png" 
+              alt="DEX Screener" 
+              className="w-full h-full object-contain"
+            />
+          </a>
+          <a 
+            href="https://dextools.io" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="w-12 h-12 object-contain cursor-pointer hover:scale-110 transition-transform duration-200"
+          >
+            <img 
+              src="/Ref/hoop_page/button_dex.png" 
+              alt="DEX Tools" 
+              className="w-full h-full object-contain"
+            />
+          </a>
         </motion.div>
       </div>
     </section>
