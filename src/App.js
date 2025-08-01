@@ -21,14 +21,8 @@ import Footer from './components/Footer';
                <Gallery />
              </div>
 
-             {/* Footer with its own background */}
-             <div style={{
-               background: '#bd4b4b',
-               paddingLeft: '80px',
-               paddingRight: '80px'
-             }}>
-               <Footer />
-             </div>
+             {/* Footer */}
+             <Footer />
            </div>
          );
        }
