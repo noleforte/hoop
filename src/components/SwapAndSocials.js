@@ -10,47 +10,23 @@ const SwapAndSocials = () => {
   const steps = [
     {
       title: "Step 1:",
-      subtitle: "Setup a wallet",
-      description: "And take off with $HOOP!",
-      details: [
-        "Download Phantom or Solflare wallet",
-        "Add SOL to your wallet",
-        "Connect wallet to Jupiter",
-        "Swap SOL for HOOP tokens"
-      ]
+      subtitle: "Create a wallet",
+      description: "You’re one step closer to the HOOP universe!"
     },
     {
       title: "Step 2:",
-      subtitle: "Connect to Jupiter",
-      description: "The best DEX aggregator!",
-      details: [
-        "Visit jup.ag in your browser",
-        "Connect your wallet",
-        "Select SOL as input token",
-        "Select HOOP as output token"
-      ]
+      subtitle: "Buy some SOL",
+      description: "At HOOP, we believe it's a magical internet coin with the ecosystem of the future"
     },
     {
       title: "Step 3:",
-      subtitle: "Execute the swap",
-      description: "Get your HOOP tokens!",
-      details: [
-        "Enter the amount of SOL to swap",
-        "Review the transaction details",
-        "Confirm the swap in your wallet",
-        "Wait for transaction confirmation"
-      ]
+      subtitle: "Head to jup.ag",
+      description: "You're almost there - copy the contract address, go to jup.ag, and paste it into the search bar"
     },
     {
       title: "Step 4:",
-      subtitle: "Join the community",
-      description: "Welcome to the HOOP family!",
-      details: [
-        "Join our Telegram group",
-        "Follow us on Twitter/X",
-        "Share your HOOP journey",
-        "Stay updated with announcements"
-      ]
+      subtitle: "Swap SOL for $HOOP",
+      description: "Congratulations — you’re now part of the HOOP story!"
     }
   ];
 
@@ -120,34 +96,22 @@ const SwapAndSocials = () => {
                 <p className="font-gulkave font-semibold text-lg md:text-2xl mb-1 md:mb-2 text-white">{steps[currentStep].subtitle}</p>
                 <p className="font-gulkave text-base md:text-lg opacity-80 text-white mb-3 md:mb-4">{steps[currentStep].description}</p>
 
-                <div className="flex-1">
-                  <h4 className="font-gulkave text-lg md:text-xl font-bold text-white mb-2 md:mb-3">Quick Steps:</h4>
-                  <ul className="text-white space-y-1 md:space-y-2">
-                    {steps[currentStep].details.map((detail, index) => (
-                      <li key={index} className="flex items-center text-sm md:text-base font-gulkave">
-                        <span className="w-1.5 md:w-2 h-1.5 md:h-2 bg-white rounded-full mr-2 md:mr-3 flex-shrink-0"></span>
-                        {detail}
-                      </li>
-                    ))}
-                  </ul>
+                {/* Step Indicators */}
+                <div className="absolute bottom-2 md:bottom-4 left-1/2 transform -translate-x-1/2 flex gap-1 md:gap-2">
+                  {steps.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => handleStepChange(index)}
+                      className={`w-2 md:w-3 h-2 md:h-3 rounded-full transition-all duration-300 ${
+                        index === currentStep
+                          ? 'bg-white scale-125'
+                          : 'bg-white/50 hover:bg-white/70'
+                      }`}
+                    />
+                  ))}
                 </div>
               </motion.div>
             </AnimatePresence>
-
-            {/* Step Indicators */}
-            <div className="absolute bottom-2 md:bottom-4 left-1/2 transform -translate-x-1/2 flex gap-1 md:gap-2">
-              {steps.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => handleStepChange(index)}
-                  className={`w-2 md:w-3 h-2 md:h-3 rounded-full transition-all duration-300 ${
-                    index === currentStep
-                      ? 'bg-white scale-125'
-                      : 'bg-white/50 hover:bg-white/70'
-                  }`}
-                />
-              ))}
-            </div>
           </motion.div>
         </div>
 
