@@ -236,13 +236,15 @@ const Banner = () => {
             rel="noopener noreferrer"
             className="bg-transparent text-white font-bold px-4 py-2 rounded-full hover:bg-white/10 transition-colors text-sm cursor-pointer"
             style={{
-              paddingLeft: '9.7rem',
-              marginRight: '1.5rem',
-              marginTop: '2rem',
-              paddingTop: '1rem'
+              paddingLeft: '8.5rem',
+              marginRight: '2rem',
+              marginTop: '1.5rem',
+              paddingTop: '1rem',
+              width: '120px',
+              height: '40px'
             }}
           >
-            BUY HOOP
+            
           </a>
         </div>
       </header>
