@@ -45,12 +45,7 @@ const SwapAndSocials = () => {
   };
 
   return (
-    <section id="how-to-buy" className="py-8 md:py-16 lg:py-32 text-center min-h-screen flex items-center justify-center px-4 md:px-0" style={{ 
-      paddingTop: '80px',
-      '@media (min-width: 768px)': {
-        paddingTop: '2rem'
-      }
-    }}>
+    <section id="how-to-buy" className="py-8 md:py-16 lg:py-32 text-center min-h-screen flex items-center justify-center px-4 md:px-0 pt-20 md:pt-8">
       <div className="w-full max-w-none md:max-w-7xl mx-auto flex flex-col items-center">
         <div className="section-heading-container mb-6 md:mb-8">
           <motion.img

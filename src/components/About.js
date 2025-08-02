@@ -4,12 +4,7 @@ import { motion } from 'framer-motion';
 const About = () => {
 
            return (
-           <section id="about" className="w-full py-8 md:py-24 px-4 md:px-0" style={{ 
-             paddingTop: '80px',
-             '@media (min-width: 768px)': {
-               paddingTop: '2rem'
-             }
-           }}>
+           <section id="about" className="w-full py-8 md:py-24 px-4 md:px-0 pt-20 md:pt-8">
                           <div className="section-heading-container mb-6 md:mb-8">
           <motion.img
             src="/Ref/hoop_page/n2.png"
