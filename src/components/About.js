@@ -36,9 +36,9 @@ const About = () => {
         />
         
                        {/* Center content box */}
-               <div className="w-full flex flex-col items-center max-w-4xl mx-auto px-6">
-                 <div className="bg-[#fb928b] backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-white/20 shadow-2xl">
-                   <div className="space-y-6">
+               <div className="w-full flex flex-col items-center max-w-none lg:max-w-4xl mx-auto px-0 lg:px-6">
+                 <div className="bg-[#fb928b] backdrop-blur-sm rounded-2xl p-6 md:p-8 lg:p-12 border border-white/20 shadow-2xl mx-4 lg:mx-0">
+                   <div className="space-y-4 md:space-y-6">
                      <p className="font-gulkave text-white text-base sm:text-lg md:text-xl text-center leading-relaxed md:leading-loose">
                        Project HOOP is a collection of unique characters, each embodying a vivid archetype and carrying a one-of-a-kind story.
                      </p>

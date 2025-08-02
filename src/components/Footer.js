@@ -10,35 +10,42 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-[#bd4b4b] py-16" style={{ paddingLeft: '80px', paddingRight: '80px' }}>
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8 ml-64">
+    <footer className="bg-[#bd4b4b] py-8 md:py-16" style={{ 
+      paddingLeft: '20px', 
+      paddingRight: '20px',
+      '@media (min-width: 768px)': {
+        paddingLeft: '80px',
+        paddingRight: '80px'
+      }
+    }}>
+      <div className="max-w-none md:max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-6 md:mb-8 ml-0 md:ml-64">
           
                     {/* Navigation */}
           <div className="text-center md:text-left">
-            <h3 className="font-gulkave text-2xl text-white mb-4">Navigation</h3>
-            <div className="flex flex-col gap-3">
+            <h3 className="font-gulkave text-xl md:text-2xl text-white mb-3 md:mb-4">Navigation</h3>
+            <div className="flex flex-col gap-2 md:gap-3">
               <button 
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                className="font-gulkave text-white hover:text-pink-200 transition-colors cursor-pointer text-left text-lg"
+                className="font-gulkave text-white hover:text-pink-200 transition-colors cursor-pointer text-center md:text-left text-base md:text-lg"
               >
                 Home
               </button>
               <button 
                 onClick={() => scrollToSection('about')}
-                className="font-gulkave text-white hover:text-pink-200 transition-colors cursor-pointer text-left text-lg"
+                className="font-gulkave text-white hover:text-pink-200 transition-colors cursor-pointer text-center md:text-left text-base md:text-lg"
               >
                 About HOOP
               </button>
               <button 
                 onClick={() => scrollToSection('how-to-buy')}
-                className="font-gulkave text-white hover:text-pink-200 transition-colors cursor-pointer text-left text-lg"
+                className="font-gulkave text-white hover:text-pink-200 transition-colors cursor-pointer text-center md:text-left text-base md:text-lg"
               >
                 How to Buy
               </button>
               <button 
                 onClick={() => scrollToSection('gallery')}
-                className="font-gulkave text-white hover:text-pink-200 transition-colors cursor-pointer text-left text-lg"
+                className="font-gulkave text-white hover:text-pink-200 transition-colors cursor-pointer text-center md:text-left text-base md:text-lg"
               >
                 Gallery
               </button>
@@ -47,8 +54,8 @@ const Footer = () => {
 
           {/* Social Media */}
           <div className="text-center md:text-left">
-            <h3 className="font-gulkave text-2xl text-white mb-4">Follow Us</h3>
-            <div className="flex gap-4 justify-center md:justify-start mb-4">
+            <h3 className="font-gulkave text-xl md:text-2xl text-white mb-3 md:mb-4">Follow Us</h3>
+            <div className="flex gap-3 md:gap-4 justify-center md:justify-start mb-3 md:mb-4">
               <a 
                 href="https://twitter.com/hoop" 
                 target="_blank" 
@@ -58,7 +65,7 @@ const Footer = () => {
                 <motion.img
                   src="/Ref/hoop_page/button_x.png"
                   alt="Twitter/X"
-                  className="w-10 h-10 object-contain"
+                  className="w-8 h-8 md:w-10 md:h-10 object-contain"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 />
@@ -72,26 +79,28 @@ const Footer = () => {
                 <motion.img
                   src="/Ref/hoop_page/button_tg.png"
                   alt="Telegram"
-                  className="w-10 h-10 object-contain"
+                  className="w-8 h-8 md:w-10 md:h-10 object-contain"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 />
               </a>
             </div>
-            <a 
-              href="https://jup.ag/swap" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-white text-[#bd4b4b] px-6 py-3 rounded-full font-gulkave font-bold hover:bg-pink-100 transition-colors text-lg"
-            >
-              <span>GET $HOOP</span>
-            </a>
+            <div className="text-center md:text-left">
+              <a 
+                href="https://jup.ag/swap" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-white text-[#bd4b4b] px-4 md:px-6 py-2 md:py-3 rounded-full font-gulkave font-bold hover:bg-pink-100 transition-colors text-sm md:text-lg"
+              >
+                <span>GET $HOOP</span>
+              </a>
+            </div>
           </div>
 
           {/* Disclaimer */}
           <div className="text-center md:text-left">
-            <h3 className="font-gulkave text-2xl text-white mb-4">Disclaimer:</h3>
-            <p className="font-gulkave text-white text-base leading-relaxed">
+            <h3 className="font-gulkave text-xl md:text-2xl text-white mb-3 md:mb-4">Disclaimer:</h3>
+            <p className="font-gulkave text-white text-sm md:text-base leading-relaxed">
               This website is for entertainment only. Meme coins are
               risky, so DYOR and only invest what you can afford to
               lose.
@@ -100,8 +109,8 @@ const Footer = () => {
         </div>
 
         {/* Copyright */}
-        <div className="text-center border-t border-white/20 pt-8">
-          <p className="font-gulkave text-xl text-white">
+        <div className="text-center border-t border-white/20 pt-4 md:pt-8">
+          <p className="font-gulkave text-lg md:text-xl text-white">
             © 2025 HOOP the coin. All rights HOOPED.
           </p>
         </div>

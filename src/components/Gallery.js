@@ -21,7 +21,7 @@ const Gallery = () => {
 
            return (
            <section id="gallery" className="relative py-16 md:py-32 text-center overflow-hidden min-h-screen flex items-center">
-      <div className="w-full max-w-7xl mx-auto">
+      <div className="w-full max-w-none md:max-w-7xl mx-auto">
                 <div className="section-heading-container">
           <motion.img
             src="/Ref/hoop_page/n1.png"
@@ -35,7 +35,7 @@ const Gallery = () => {
         </div>
         
         {/* Two separate tunnels with moving images */}
-        <div className="relative mx-auto max-w-7xl space-y-32">
+        <div className="relative mx-auto max-w-none md:max-w-7xl space-y-32">
           {/* First tunnel - moving right */}
           <div className="relative h-[200px] sm:h-[300px] md:h-[250px]">
             <InfiniteScrollRow 
