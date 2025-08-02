@@ -20,7 +20,12 @@ const Gallery = () => {
   ];
 
            return (
-           <section id="gallery" className="relative py-8 md:py-16 lg:py-32 text-center overflow-hidden min-h-screen flex items-center px-4 md:px-0">
+           <section id="gallery" className="relative py-8 md:py-16 lg:py-32 text-center overflow-hidden min-h-screen flex items-center px-4 md:px-0" style={{ 
+             paddingTop: '80px',
+             '@media (min-width: 768px)': {
+               paddingTop: '2rem'
+             }
+           }}>
       <div className="w-full max-w-none md:max-w-7xl mx-auto">
                 <div className="section-heading-container mb-6 md:mb-8">
           <motion.img
