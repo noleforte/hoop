@@ -15,7 +15,7 @@ export default function InfiniteScrollRow({ images, direction = "right", speed =
 
       {/* Бесконечный туннель с улучшенной анимацией */}
       <motion.div
-        className="flex gap-6"
+        className="flex gap-3 md:gap-6"
         animate={{ 
           x: direction === "right" ? ["0%", "-100%"] : ["-100%", "0%"] 
         }}
@@ -33,7 +33,7 @@ export default function InfiniteScrollRow({ images, direction = "right", speed =
           <motion.img
             key={`infinite-${i}`}
             src={src}
-            className="w-96 h-72 object-cover rounded-xl shrink-0"
+            className="w-48 h-36 md:w-96 md:h-72 object-cover rounded-xl shrink-0"
             alt={`img-${i % images.length}`}
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}

@@ -35,9 +35,9 @@ const Gallery = () => {
         </div>
         
         {/* Two separate tunnels with moving images */}
-        <div className="relative mx-auto max-w-none md:max-w-7xl space-y-16 md:space-y-32">
+        <div className="relative mx-auto max-w-none md:max-w-7xl space-y-20 md:space-y-48 lg:space-y-56">
           {/* First tunnel - moving right */}
-          <div className="relative h-[150px] sm:h-[200px] md:h-[250px]">
+          <div className="relative h-[100px] sm:h-[120px] md:h-[180px] lg:h-[250px]">
             <InfiniteScrollRow 
               images={galleryImages.slice(0, 8)} 
               direction="right" 
@@ -48,7 +48,7 @@ const Gallery = () => {
           </div>
           
           {/* Second tunnel - moving left */}
-          <div className="relative h-[150px] sm:h-[200px] md:h-[400px]">
+          <div className="relative h-[100px] sm:h-[120px] md:h-[180px] lg:h-[400px]">
             <InfiniteScrollRow 
               images={galleryImages.slice(6, 13)} 
               direction="left" 
