@@ -45,13 +45,13 @@ const SwapAndSocials = () => {
   };
 
   return (
-    <section id="how-to-buy" className="py-8 md:py-16 lg:py-32 text-center min-h-screen flex items-center justify-center">
-      <div className="w-full max-w-none md:max-w-7xl mx-auto flex flex-col items-center px-0 md:px-8">
-        <div className="section-heading-container">
+    <section id="how-to-buy" className="py-8 md:py-16 lg:py-32 text-center min-h-screen flex items-center justify-center px-4 md:px-0">
+      <div className="w-full max-w-none md:max-w-7xl mx-auto flex flex-col items-center">
+        <div className="section-heading-container mb-6 md:mb-8">
           <motion.img
             src="/Ref/hoop_page/n3.png"
             alt="How to Buy"
-            className="mx-auto mb-4 md:mb-8 lg:mb-16 max-w-full h-auto"
+            className="mx-auto mb-4 md:mb-8 lg:mb-16 max-w-[80vw] md:max-w-full h-auto"
             initial={{ opacity: 0, y: 100, scale: 0.5 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.8 }}
@@ -59,10 +59,10 @@ const SwapAndSocials = () => {
           />
         </div>
         
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-4 md:gap-8 lg:gap-16 w-full px-4 md:px-0">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-4 md:gap-8 lg:gap-16 w-full">
           {/* Swap Widget */}
           <motion.div
-            className="w-full lg:w-[600px] h-[250px] sm:h-[300px] md:h-[400px] lg:h-[400px] bg-black rounded-lg overflow-hidden shadow-xl"
+            className="w-full lg:w-[600px] h-[200px] sm:h-[250px] md:h-[400px] lg:h-[400px] bg-black rounded-lg overflow-hidden shadow-xl"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -77,7 +77,7 @@ const SwapAndSocials = () => {
 
           {/* Interactive Info Block */}
           <motion.div
-            className="w-full lg:w-[1000px] h-[250px] sm:h-[300px] md:h-[400px] lg:h-[400px] bg-[#fb928b] p-3 md:p-6 lg:p-8 text-left shadow-lg relative rounded-2xl"
+            className="w-full lg:w-[1000px] h-[200px] sm:h-[250px] md:h-[400px] lg:h-[400px] bg-[#fb928b] p-3 md:p-6 lg:p-8 text-left shadow-lg relative rounded-2xl"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -92,9 +92,9 @@ const SwapAndSocials = () => {
                 transition={{ duration: 0.5 }}
                 className="h-full flex flex-col"
               >
-                <h3 className="font-gulkave text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold mb-3 md:mb-6 lg:mb-8 text-white">{steps[currentStep].title}</h3>
-                <p className="font-gulkave font-semibold text-lg sm:text-xl md:text-2xl lg:text-5xl mb-3 md:mb-5 lg:mb-6 text-white">{steps[currentStep].subtitle}</p>
-                <p className="font-gulkave text-sm sm:text-base md:text-lg lg:text-3xl opacity-80 text-white mb-4 md:mb-6 lg:mb-10">{steps[currentStep].description}</p>
+                <h3 className="font-gulkave text-lg sm:text-xl md:text-3xl lg:text-5xl font-bold mb-2 md:mb-6 lg:mb-8 text-white">{steps[currentStep].title}</h3>
+                <p className="font-gulkave font-semibold text-sm sm:text-lg md:text-2xl lg:text-5xl mb-2 md:mb-5 lg:mb-6 text-white">{steps[currentStep].subtitle}</p>
+                <p className="font-gulkave text-xs sm:text-sm md:text-lg lg:text-3xl opacity-80 text-white mb-2 md:mb-6 lg:mb-10">{steps[currentStep].description}</p>
 
                 {/* Step Indicators */}
                 <div className="absolute bottom-2 md:bottom-4 left-1/2 transform -translate-x-1/2 flex gap-1 md:gap-2">
@@ -117,7 +117,7 @@ const SwapAndSocials = () => {
 
         {/* Logos */}
         <motion.div
-          className="flex justify-center gap-4 md:gap-6 mt-8 md:mt-16"
+          className="flex justify-center gap-3 md:gap-6 mt-6 md:mt-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
@@ -127,7 +127,7 @@ const SwapAndSocials = () => {
             href="https://dexscreener.com" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="w-12 h-12 md:w-16 md:h-16 object-contain cursor-pointer hover:scale-110 transition-transform duration-200 relative"
+            className="w-10 h-10 md:w-16 md:h-16 object-contain cursor-pointer hover:scale-110 transition-transform duration-200 relative"
           >
             <img 
               src="/Ref/hoop_page/dex_button.png" 
@@ -149,7 +149,7 @@ const SwapAndSocials = () => {
             href="https://dextools.io" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="w-12 h-12 md:w-16 md:h-16 object-contain cursor-pointer hover:scale-110 transition-transform duration-200 relative"
+            className="w-10 h-10 md:w-16 md:h-16 object-contain cursor-pointer hover:scale-110 transition-transform duration-200 relative"
           >
             <img 
               src="/Ref/hoop_page/button_dex.png" 

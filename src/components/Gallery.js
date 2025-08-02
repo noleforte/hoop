@@ -20,13 +20,13 @@ const Gallery = () => {
   ];
 
            return (
-           <section id="gallery" className="relative py-16 md:py-32 text-center overflow-hidden min-h-screen flex items-center">
+           <section id="gallery" className="relative py-8 md:py-16 lg:py-32 text-center overflow-hidden min-h-screen flex items-center px-4 md:px-0">
       <div className="w-full max-w-none md:max-w-7xl mx-auto">
-                <div className="section-heading-container">
+                <div className="section-heading-container mb-6 md:mb-8">
           <motion.img
             src="/Ref/hoop_page/n1.png"
             alt="Gallery"
-            className="mx-auto mb-8 md:mb-16 max-w-full h-auto"
+            className="mx-auto mb-4 md:mb-8 lg:mb-16 max-w-[80vw] md:max-w-full h-auto"
             initial={{ opacity: 0, y: 100, scale: 0.5 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.8 }}
@@ -35,9 +35,9 @@ const Gallery = () => {
         </div>
         
         {/* Two separate tunnels with moving images */}
-        <div className="relative mx-auto max-w-none md:max-w-7xl space-y-32">
+        <div className="relative mx-auto max-w-none md:max-w-7xl space-y-16 md:space-y-32">
           {/* First tunnel - moving right */}
-          <div className="relative h-[200px] sm:h-[300px] md:h-[250px]">
+          <div className="relative h-[150px] sm:h-[200px] md:h-[250px]">
             <InfiniteScrollRow 
               images={galleryImages.slice(0, 8)} 
               direction="right" 
@@ -48,7 +48,7 @@ const Gallery = () => {
           </div>
           
           {/* Second tunnel - moving left */}
-          <div className="relative h-[200px] sm:h-[300px] md:h-[400px]">
+          <div className="relative h-[150px] sm:h-[200px] md:h-[400px]">
             <InfiniteScrollRow 
               images={galleryImages.slice(6, 13)} 
               direction="left" 
