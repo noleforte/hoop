@@ -57,7 +57,7 @@ const Footer = () => {
             <h3 className="font-gulkave text-xl md:text-2xl text-white mb-3 md:mb-4">Follow Us</h3>
             <div className="flex gap-3 md:gap-4 justify-center md:justify-start mb-3 md:mb-4">
               <a 
-                href="https://twitter.com/hoop" 
+                href="https://x.com/HoopLandSol" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="hover:scale-110 transition-transform"
@@ -71,7 +71,7 @@ const Footer = () => {
                 />
               </a>
               <a 
-                href="https://t.me/hoop" 
+                href="https://t.me/HoopLandSol" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="hover:scale-110 transition-transform"
@@ -87,7 +87,7 @@ const Footer = () => {
             </div>
             <div className="text-center md:text-left">
               <a 
-                href="https://jup.ag/swap" 
+                href="https://jup.ag/swap?sell=So11111111111111111111111111111111111111112&buy=GQACuDNEgVYB49gSeyrPWJ1NA3xbzvwnRACtcicspump" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-white text-[#bd4b4b] px-4 md:px-6 py-2 md:py-3 rounded-full font-gulkave font-bold hover:bg-pink-100 transition-colors text-sm md:text-lg"

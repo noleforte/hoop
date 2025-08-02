@@ -69,7 +69,7 @@ const SwapAndSocials = () => {
             viewport={{ once: false }}
           >
             <iframe
-              src="https://jup.ag/swap?outputCurrency=SOL"
+              src="https://jup.ag/swap?sell=So11111111111111111111111111111111111111112&buy=GQACuDNEgVYB49gSeyrPWJ1NA3xbzvwnRACtcicspump?outputCurrency=SOL"
               className="w-full h-full border-none"
               title="Jupiter Swap Widget"
             />
@@ -124,7 +124,7 @@ const SwapAndSocials = () => {
           viewport={{ once: false }}
         >
           <a 
-            href="https://dexscreener.com" 
+            href="https://dexscreener.com/solana/GQACuDNEgVYB49gSeyrPWJ1NA3xbzvwnRACtcicspump" 
             target="_blank" 
             rel="noopener noreferrer"
             className="w-10 h-10 md:w-16 md:h-16 object-contain cursor-pointer hover:scale-110 transition-transform duration-200 relative"
@@ -146,7 +146,7 @@ const SwapAndSocials = () => {
             />
           </a>
           <a 
-            href="https://dextools.io" 
+            href="https://www.dextools.io/app/en/solana/pair-explorer/D3mmhDbi8pVLgb8fF7sXi5NPh8tFfYmbx3TyEkayGQuU?t=1754125970717" 
             target="_blank" 
             rel="noopener noreferrer"
             className="w-10 h-10 md:w-16 md:h-16 object-contain cursor-pointer hover:scale-110 transition-transform duration-200 relative"

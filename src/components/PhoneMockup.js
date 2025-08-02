@@ -25,7 +25,7 @@ const PhoneMockup = () => {
             {/* Jupiter Swap iframe */}
             <div className="w-full h-full">
               <iframe
-                src="https://jup.ag/swap/SOL-HOOP"
+                src="https://jup.ag/swap?sell=So11111111111111111111111111111111111111112&buy=GQACuDNEgVYB49gSeyrPWJ1NA3xbzvwnRACtcicspump/SOL-HOOP"
                 title="Jupiter Swap"
                 className="w-full h-full border-0"
                 allow="clipboard-write"
