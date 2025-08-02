@@ -94,7 +94,7 @@ const Banner = () => {
                   {/* Social Links */}
                   <div className="flex space-x-4 pt-4 border-t border-white/20">
                     <a 
-                      href="https://dexscreener.com/solana/GQACuDNEgVYB49gSeyrPWJ1NA3xbzvwnRACtcicspump" 
+                      href="https://dexscreener.com" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="w-10 h-10"
@@ -106,7 +106,7 @@ const Banner = () => {
                       />
                     </a>
                     <a 
-                      href="https://www.dextools.io/app/en/solana/pair-explorer/D3mmhDbi8pVLgb8fF7sXi5NPh8tFfYmbx3TyEkayGQuU?t=1754125970717" 
+                      href="https://dextools.io" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="w-10 h-10"
@@ -118,7 +118,7 @@ const Banner = () => {
                       />
                     </a>
                     <a 
-                      href="https://x.com/HoopLandSol" 
+                      href="https://twitter.com/hoop" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="w-10 h-10"
@@ -130,7 +130,7 @@ const Banner = () => {
                       />
                     </a>
                     <a 
-                      href="https://t.me/HoopLandSol" 
+                      href="https://t.me/hoop" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="w-10 h-10"
@@ -230,15 +230,20 @@ const Banner = () => {
           </div>
           
           {/* Right side - BUY HOOP button */}
-          <button className="bg-transparent text-white font-bold px-4 py-2 rounded-full hover:bg-white/10 transition-colors text-sm" style={{
-            paddingLeft: '9.7rem',
-            marginRight: '1.5rem',
-            marginTop: '2rem',
-            paddingTop: '1rem',
-            href: 'https://jup.ag/swap?sell=So11111111111111111111111111111111111111112&buy=GQACuDNEgVYB49gSeyrPWJ1NA3xbzvwnRACtcicspump?sell=So11111111111111111111111111111111111111112&buy=GQACuDNEgVYB49gSeyrPWJ1NA3xbzvwnRACtcicspump'
-          }}>
-            
-          </button>
+          <a 
+            href="https://jup.ag/swap?sell=So11111111111111111111111111111111111111112&buy=GQACuDNEgVYB49gSeyrPWJ1NA3xbzvwnRACtcicspump" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="bg-transparent text-white font-bold px-4 py-2 rounded-full hover:bg-white/10 transition-colors text-sm cursor-pointer"
+            style={{
+              paddingLeft: '9.7rem',
+              marginRight: '1.5rem',
+              marginTop: '2rem',
+              paddingTop: '1rem'
+            }}
+          >
+            BUY HOOP
+          </a>
         </div>
       </header>
 
